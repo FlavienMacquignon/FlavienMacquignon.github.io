@@ -13,7 +13,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
         /* TODO use this one for titles? */
         @import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap');
-
+        /* TODO Check device width */
         @media screen {
 
             body,
@@ -24,6 +24,9 @@
                 font: 10px "Castoro", serif;
                 /* TODO Change color here */
                 color: #7b1cd4;
+            }
+            .title{
+                text-align-last: right;
             }
         }
 
@@ -40,22 +43,13 @@
                 font: 45px;
             }
         }
-
-        aside {
-            width: 30%;
-            padding-left: 15px;
-            margin-left: 15px;
-            float: left;
-            font-style: italic;
-            background-color: lightgray;
-        }
     </style>
 </head>
 
 <body>
     <div class="top_header">
         <h1 class="top_title">Flavien Macquignon</h1>
-        <span>Développeur Junior</span>
+        <span class="title">Développeur Junior</span>
     </div>
     <aside>
         <!-- 
