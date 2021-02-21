@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <html lang="fr">
 
@@ -10,7 +9,7 @@
     <meta name="author" content="Flavien Macquignon">
     <title>Flavien Macquignon > Développeur Junior</title>
     <style type="text/css">
-    /* TODO use this font only as title */
+        /* TODO use this font only as title */
         @import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
         /* TODO use this one for titles? */
         @import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap');
@@ -50,12 +49,6 @@
             font-style: italic;
             background-color: lightgray;
         }
-        .training {
-            text-align: center;
-        }
-        .training-list {
-            text-size-adjust: 12px;
-        }
     </style>
 </head>
 
@@ -65,7 +58,7 @@
         <span>Développeur Junior</span>
     </div>
     <aside>
-            <!-- 
+        <!-- 
         ####################################################################################
                                         Contact Information
         ####################################################################################
@@ -78,6 +71,7 @@
             </div>
             <div class="age_class">
                 <span class="attribute">Age: </span> <span class="age">
+                    <!-- TODO Add a noscript tag here-->
                     <script>
                         window.onload = function () {
                             let myAge = 0;
@@ -186,4 +180,39 @@
             </li>
         </ul>
     </div>
-</body>
+    <!-- 
+        ####################################################################################
+                                        Skills
+        ####################################################################################
+    -->
+    <div class="Skills">
+        <h2> Compétences</h2>
+        <ul class="Skills-list">
+            <li class="Skills-list list_item">
+                <label for="PHP">PHP: </label>
+                <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
+            </li>
+            <li class="Skills-list list_item">
+                <label for="Symfony">Symfony: </label>
+                <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
+            </li>
+            <li class="Skills-list list_item">
+                <label for="HTML/CSS">HTML/CSS: </label>
+                <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
+            </li>
+            <li class="Skills-list list_item">
+                <label for="C#">C#: </label>
+                <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
+            </li>
+            <li class="Skills-list list_item">
+                <label for="C++">C++: </label>
+                <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
+            </li>
+            <li class="Skills-list list_item">
+                <label for="Linux">Linux: </label>
+                <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
+            </li>
+        </ul>
+
+    </div>
+</body></html>
