@@ -13,6 +13,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
         /* TODO use this one for titles? */
         @import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap');
+
         /* TODO Check device width */
         @media screen {
 
@@ -25,7 +26,8 @@
                 /* TODO Change color here */
                 color: #7b1cd4;
             }
-            .title{
+
+            .title {
                 text-align-last: right;
             }
         }
@@ -57,7 +59,7 @@
                                         Contact Information
         ####################################################################################
     -->
-        <div class="contact vcard">
+        <div id="vCard" class="contact vcard">
             <h2>Informations Personnelles</h2>
             <div class="name">
                 <span class="attribute">Nom: </span> <span class="firstname">Flavien</span>
@@ -65,7 +67,6 @@
             </div>
             <div class="age_class">
                 <span class="attribute">Age: </span> <span class="age">
-                    <!-- TODO Add a noscript tag here-->
                     <script>
                         window.onload = function () {
                             let myAge = 0;
@@ -98,8 +99,22 @@
                             document.getElementById('age').innerHTML = myAge;
                         }
                     </script>
+                    <noscript>25</noscript>
                     <span id="age"></span> ans (1995)
                 </span>
+                <script>var vCard = new Blob(["BEGIN: VCARD                    VERSION: 2.1                    N: Gump; Forrest                    FN: Forrest Gump                    ORG: Gump Shrimp Co.                    TITLE: Shrimp Man                    TEL; WORK; VOICE: (111) 555 - 1212                    TEL; HOME; VOICE: (404) 555 - 1212                    ADR; WORK: ;; 100 Waters Edge; Baytown; LA; 30314; United States of America                    LABEL; WORK; ENCODING = QUOTED - PRINTABLE: 100 Waters Edge = 0D = 0ABaytown, LA 30314 = 0D = 0AUnited States of America                    ADR; HOME: ;; 42 Plantation St.; Baytown; LA; 30314; United States of America                    LABEL; HOME; ENCODING = QUOTED - PRINTABLE: 42 Plantation St.= 0D = 0ABaytown, LA 30314 = 0D = 0AUnited States of America                    EMAIL; PREF; INTERNET: forrestgump@walladalla.com                    REV: 20080424T195243Z                    END: VCARD"], {type: 'text/plain'}) ;
+    console.log("pass vCard");
+    var url = window.URL.createObjectURL(vCard);
+    var anchor = document.createElement("a");
+    console.log("pass document");
+    anchor.href = url;
+    anchor.download = "vCard.vcf";
+    // INFO this function load the event that trigger the download ==> Find a way to retatch it to a onclick event
+    anchor.click();
+    window.URL.revokeObjectURL(url);
+    document.removeChild(anchor);
+                    </script>
+
             </div>
             <div class="adress_class">
                 <span class="attribute">Adresse: </span> <span class="adress">39, Avenue de la Libération, 63000
@@ -209,4 +224,6 @@
         </ul>
 
     </div>
-</body></html>
+</body>
+
+</html>
