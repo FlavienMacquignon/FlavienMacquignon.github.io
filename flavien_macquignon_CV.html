@@ -9,6 +9,7 @@
     <meta name="author" content="Flavien Macquignon">
     <title>Flavien Macquignon > Développeur Junior</title>
     <style type="text/css">
+    /* TODO build CSS*/
         /* TODO use this font only as title */
         @import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
         /* TODO use this one for titles? */
@@ -62,8 +63,7 @@
         <div id="vCard" class="contact vcard">
             <h2>Informations Personnelles</h2>
             <div class="name">
-                <span class="attribute">Nom: </span> <span class="firstname">Flavien</span>
-                <span class="surname">Macquignon</span>
+                <span class="attribute">Nom: </span> <span class="name" id="FN">Flavien Macquignon</span>
             </div>
             <div class="age_class">
                 <span class="attribute">Age: </span> <span class="age">
@@ -102,39 +102,50 @@
                     <noscript>25</noscript>
                     <span id="age"></span> ans (1995)
                 </span>
-                <script>var vCard = new Blob(["BEGIN: VCARD                    VERSION: 2.1                    N: Gump; Forrest                    FN: Forrest Gump                    ORG: Gump Shrimp Co.                    TITLE: Shrimp Man                    TEL; WORK; VOICE: (111) 555 - 1212                    TEL; HOME; VOICE: (404) 555 - 1212                    ADR; WORK: ;; 100 Waters Edge; Baytown; LA; 30314; United States of America                    LABEL; WORK; ENCODING = QUOTED - PRINTABLE: 100 Waters Edge = 0D = 0ABaytown, LA 30314 = 0D = 0AUnited States of America                    ADR; HOME: ;; 42 Plantation St.; Baytown; LA; 30314; United States of America                    LABEL; HOME; ENCODING = QUOTED - PRINTABLE: 42 Plantation St.= 0D = 0ABaytown, LA 30314 = 0D = 0AUnited States of America                    EMAIL; PREF; INTERNET: forrestgump@walladalla.com                    REV: 20080424T195243Z                    END: VCARD"], {type: 'text/plain'}) ;
-    console.log("pass vCard");
-    var url = window.URL.createObjectURL(vCard);
-    var anchor = document.createElement("a");
-    console.log("pass document");
-    anchor.href = url;
-    anchor.download = "vCard.vcf";
-    // INFO this function load the event that trigger the download ==> Find a way to retatch it to a onclick event
-    anchor.click();
-    window.URL.revokeObjectURL(url);
-    document.removeChild(anchor);
-                    </script>
-
             </div>
             <div class="adress_class">
-                <span class="attribute">Adresse: </span> <span class="adress">39, Avenue de la Libération, 63000
-                    Clermont-Ferrand, France</span>
+                <span class="attribute">Adresse: </span> <span class="adress" id="ADR">39, Avenue de la Liberation,
+                    63000 Clermont-Ferrand, France</span>
             </div>
 
             <div class="phone_class">
-                <!-- TEMP not sure about telto -->
-                <span class="attribute">Téléphone: </span> <span class="mobile"><a href="tel:+3388005340">06 88 00 53 40
+                <span class="attribute">Téléphone: </span> <span class="mobile"><a href="tel:+3388005340" id="CELL">06
+                        88 00 53 40
                     </a></span> &emsp;
-                <span class="corded"> <a href="tel:+33443114208"> 04 43 11 42 08<a></span>
+                <span class="corded"> <a href="tel:+33443114208" id="HOME"> 04 43 11 42 08<a></span>
             </div>
             <div class="email_class">
-                <span class="attibute">Email: </span> <span class="email"> <a
+                <span class="attibute">Email: </span> <span class="email"> <a id="EMAIL"
                         href="mailto:flavien-macquignon@fastmail.fr">flavien_macquignon@fastmail.fr</a> </span>
             </div>
             <div class="url_class">
                 <span class="attribute">Personnal Website: </span> <span class="url"><a
-                        href="https://FlavienMacquignon.github.io">FlavienMacquignon.github.io</a></span>
+                        href="https://FlavienMacquignon.github.io" id="WEB">FlavienMacquignon.github.io</a></span> </br>
+                <span class="attribute">Github</span> <span class="url"> <a href="https://github.com/FlavienMacquignon"
+                        id="REPO">https://github.com/FlavienMacquignon</a></span>
             </div>
+            <script>
+                function createVCF() {
+                    var vCard = new Blob(["BEGIN: VCARD\nVERSION: 3.0\nFN:" + document.getElementById("FN").innerHTML.toString() + "\nN: Macquignon;Flavien;;;\nNICKNAME:\nORG:;\nTITLE:;\nBDAY:1995-07-02\nEMAIL;TYPE=WORK;TYPE=pref:" + document.getElementById("EMAIL").innerHTML.toString() + "\nTEL;TYPE=cell:" + document.getElementById("CELL").innerHTML.toString() + "\nTEL; TYPE=home:" + document.getElementById("HOME").innerHTML.toString() + "\nADR;TYPE=home:;;" + document.getElementById("ADR").innerHTML.toString() + "\nURL:" + document.getElementById("WEB").innerHTML.toString() + "\nEMAIL; PREF; INTERNET:" + document.getElementById("EMAIL").innerHTML.toString() + "\nREV: 20210223T102651Z\nX-SOCIAL-PROFILE;X-USER=\"" + document.getElementById("REPO").innerHTML.toString() + "\";TYPE=github:END: VCARD\n"], { type: 'text/vcard' });
+                    var url = window.URL.createObjectURL(vCard);
+                    var anchor = document.createElement("a");
+                    anchor.href = url;
+                    anchor.download = "vCard.vcf";
+                    anchor.click();
+                    window.URL.revokeObjectURL(url);
+                    document.removeChild(anchor);
+                }
+            </script>
+
+            <button id="noscript" onclick="createVCF()" style="display:none">Télécharger ma carte de visite</button>
+            <noscript><button><a href="Flavien Macquignon.vcf">Télécharger ma carte de visite</a></button></noscript>
+            <script>
+                function init() {
+                    document.getElementById("noscript").style.display = 'block';
+                    $("#noscript").show();
+                }
+                init();
+            </script>
         </div>
     </aside>
     <!-- 
