@@ -9,7 +9,7 @@
     <meta name="author" content="Flavien Macquignon">
     <title>Flavien Macquignon > Développeur Junior</title>
     <style type="text/css">
-    /* TODO build CSS*/
+        /* TODO build CSS*/
         /* TODO use this font only as title */
         @import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
         /* TODO use this one for titles? */
@@ -25,16 +25,27 @@
                 padding: 5;
                 font: 10px "Castoro", serif;
                 /* TODO Change color here */
-                color: #7b1cd4;
+            }
+
+            .contact_vcard {
+                position: static;
+            }
+
+            .row {
+                display: flex;
+            }
+
+            .leftColumn {
+                flex: 35%;
             }
 
             .title {
-                text-align-last: right;
+                text-align-last: justify;
             }
         }
 
         @media print {
-            /* TODO Check CSS for specific CSS here */
+            /* TODO Check for specific CSS here */
 
             body,
             div {
@@ -50,190 +61,199 @@
 </head>
 
 <body>
-    <div class="top_header">
-        <h1 class="top_title">Flavien Macquignon</h1>
-        <span class="title">Développeur Junior</span>
-    </div>
-    <aside>
-        <!-- 
+    <div class="row">
+        <div class="leftColumn">
+            <div class="top_header">
+                <h1 class="top_title">Flavien Macquignon</h1>
+                <span class="title">Développeur Junior</span>
+            </div>
+            <!-- 
         ####################################################################################
                                         Contact Information
         ####################################################################################
     -->
-        <div id="vCard" class="contact vcard">
-            <h2>Informations Personnelles</h2>
-            <div class="name">
-                <span class="attribute">Nom: </span> <span class="name" id="FN">Flavien Macquignon</span>
-            </div>
-            <div class="age_class">
-                <span class="attribute">Age: </span> <span class="age">
-                    <script>
-                        window.onload = function () {
-                            let myAge = 0;
-                            let now = new Date();
-                            let yearNow = now.getFullYear();
-                            let monthNow = now.getMonth();
-                            let dayNow = now.getDate();
-                            monthNow++;
-                            if (monthNow.toString().length < 2) {
-                                monthNow = monthNow.toString();
-                                monthNow = "0" + monthNow;
-                            }
-                            if (monthNow <= 07) {
-                                myAge--;
-
-                                if (dayNow == 2 && monthNow == 07) {
-                                    console.log("It's birthday time!");
-                                    myAge += yearNow - 1995;
+            <div id="vCard" class="contact_vcard">
+                <h2>Informations Personnelles</h2>
+                <div class="name">
+                    <span class="attribute">Nom: </span> <span class="name" id="FN">Flavien Macquignon</span>
+                </div>
+                <div class="age_class">
+                    <span class="attribute">Age: </span> <span class="age">
+                        <script>
+                            window.onload = function () {
+                                let myAge = 0;
+                                let now = new Date();
+                                let yearNow = now.getFullYear();
+                                let monthNow = now.getMonth();
+                                let dayNow = now.getDate();
+                                monthNow++;
+                                if (monthNow.toString().length < 2) {
+                                    monthNow = monthNow.toString();
+                                    monthNow = "0" + monthNow;
                                 }
-                                if (dayNow > 2 && monthNow >= 7) {
-                                    myAge = yearNow - 1995;
+                                if (monthNow <= 07) {
+                                    myAge--;
+
+                                    if (dayNow == 2 && monthNow == 07) {
+                                        console.log("It's birthday time!");
+                                        myAge += yearNow - 1995;
+                                    }
+                                    if (dayNow > 2 && monthNow >= 7) {
+                                        myAge = yearNow - 1995;
+                                    }
+                                    else {
+                                        myAge += yearNow - 1995;
+                                    }
                                 }
                                 else {
                                     myAge += yearNow - 1995;
                                 }
+                                document.getElementById('age').innerHTML = myAge;
                             }
-                            else {
-                                myAge += yearNow - 1995;
-                            }
-                            document.getElementById('age').innerHTML = myAge;
-                        }
-                    </script>
-                    <noscript>25</noscript>
-                    <span id="age"></span> ans (1995)
-                </span>
-            </div>
-            <div class="adress_class">
-                <span class="attribute">Adresse: </span> <span class="adress" id="ADR">39, Avenue de la Liberation,
-                    63000 Clermont-Ferrand, France</span>
-            </div>
+                        </script>
+                        <noscript>25</noscript>
+                        <span id="age"></span> ans (1995)
+                    </span>
+                </div>
+                <div class="adress_class">
+                    <span class="attribute">Adresse: </span> <span class="adress" id="ADR">39, Avenue de la Liberation,
+                        63000 Clermont-Ferrand, France</span>
+                </div>
 
-            <div class="phone_class">
-                <span class="attribute">Téléphone: </span> <span class="mobile"><a href="tel:+3388005340" id="CELL">06
-                        88 00 53 40
-                    </a></span> &emsp;
-                <span class="corded"> <a href="tel:+33443114208" id="HOME"> 04 43 11 42 08<a></span>
-            </div>
-            <div class="email_class">
-                <span class="attibute">Email: </span> <span class="email"> <a id="EMAIL"
-                        href="mailto:flavien-macquignon@fastmail.fr">flavien_macquignon@fastmail.fr</a> </span>
-            </div>
-            <div class="url_class">
-                <span class="attribute">Personnal Website: </span> <span class="url"><a
-                        href="https://FlavienMacquignon.github.io" id="WEB">FlavienMacquignon.github.io</a></span> </br>
-                <span class="attribute">Github</span> <span class="url"> <a href="https://github.com/FlavienMacquignon"
-                        id="REPO">https://github.com/FlavienMacquignon</a></span>
-            </div>
-            <script>
-                function createVCF() {
-                    var vCard = new Blob(["BEGIN: VCARD\nVERSION: 3.0\nFN:" + document.getElementById("FN").innerHTML.toString() + "\nN: Macquignon;Flavien;;;\nNICKNAME:\nORG:;\nTITLE:;\nBDAY:1995-07-02\nEMAIL;TYPE=WORK;TYPE=pref:" + document.getElementById("EMAIL").innerHTML.toString() + "\nTEL;TYPE=cell:" + document.getElementById("CELL").innerHTML.toString() + "\nTEL; TYPE=home:" + document.getElementById("HOME").innerHTML.toString() + "\nADR;TYPE=home:;;" + document.getElementById("ADR").innerHTML.toString() + "\nURL:" + document.getElementById("WEB").innerHTML.toString() + "\nEMAIL; PREF; INTERNET:" + document.getElementById("EMAIL").innerHTML.toString() + "\nREV: 20210223T102651Z\nX-SOCIAL-PROFILE;X-USER=\"" + document.getElementById("REPO").innerHTML.toString() + "\";TYPE=github:END: VCARD\n"], { type: 'text/vcard' });
-                    var url = window.URL.createObjectURL(vCard);
-                    var anchor = document.createElement("a");
-                    anchor.href = url;
-                    anchor.download = "vCard.vcf";
-                    anchor.click();
-                    window.URL.revokeObjectURL(url);
-                    document.removeChild(anchor);
-                }
-            </script>
+                <div class="phone_class">
+                    <span class="attribute">Téléphone: </span> <span class="mobile"><a href="tel:+3388005340"
+                            id="CELL">06
+                            88 00 53 40
+                        </a></span> &emsp;
+                    <span class="corded"> <a href="tel:+33443114208" id="HOME"> 04 43 11 42 08<a></span>
+                </div>
+                <div class="email_class">
+                    <span class="attibute">Email: </span> <span class="email"> <a id="EMAIL"
+                            href="mailto:flavien-macquignon@fastmail.fr">flavien_macquignon@fastmail.fr</a> </span>
+                </div>
+                <div class="url_class">
+                    <span class="attribute">Personnal Website: </span> <span class="url"><a
+                            href="https://FlavienMacquignon.github.io" id="WEB">FlavienMacquignon.github.io</a></span>
+                    </br>
+                    <span class="attribute">Github</span> <span class="url"> <a
+                            href="https://github.com/FlavienMacquignon"
+                            id="REPO">https://github.com/FlavienMacquignon</a></span>
+                </div>
+                <script>
+                    function createVCF() {
+                        var vCard = new Blob(["BEGIN: VCARD\nVERSION: 3.0\nFN:" + document.getElementById("FN").innerHTML.toString() + "\nN: Macquignon;Flavien;;;\nNICKNAME:\nORG:;\nTITLE:;\nBDAY:1995-07-02\nEMAIL;TYPE=WORK;TYPE=pref:" + document.getElementById("EMAIL").innerHTML.toString() + "\nTEL;TYPE=cell:" + document.getElementById("CELL").innerHTML.toString() + "\nTEL; TYPE=home:" + document.getElementById("HOME").innerHTML.toString() + "\nADR;TYPE=home:;;" + document.getElementById("ADR").innerHTML.toString() + "\nURL:" + document.getElementById("WEB").innerHTML.toString() + "\nEMAIL; PREF; INTERNET:" + document.getElementById("EMAIL").innerHTML.toString() + "\nREV: 20210223T102651Z\nX-SOCIAL-PROFILE;X-USER=\"" + document.getElementById("REPO").innerHTML.toString() + "\";TYPE=github:END: VCARD\n"], { type: 'text/vcard' });
+                        var url = window.URL.createObjectURL(vCard);
+                        var anchor = document.createElement("a");
+                        anchor.href = url;
+                        anchor.download = "vCard.vcf";
+                        anchor.click();
+                        window.URL.revokeObjectURL(url);
+                        document.removeChild(anchor);
+                    }
+                </script>
 
-            <button id="noscript" onclick="createVCF()" style="display:none">Télécharger ma carte de visite</button>
-            <noscript><button><a href="Flavien Macquignon.vcf">Télécharger ma carte de visite</a></button></noscript>
-            <script>
-                function init() {
-                    document.getElementById("noscript").style.display = 'block';
-                    $("#noscript").show();
-                }
-                init();
-            </script>
+                <button id="noscript" onclick="createVCF()" style="display:none">Télécharger ma carte de visite</button>
+                <noscript><button><a href="Flavien Macquignon.vcf">Télécharger ma carte de
+                            visite</a></button></noscript>
+                <script>
+                    function init() {
+                        document.getElementById("noscript").style.display = 'block';
+                        $("#noscript").show();
+                    }
+                    init();
+                </script>
+
+            </div>
         </div>
-    </aside>
-    <!-- 
+        <!-- 
         ####################################################################################
                                         Training
         ####################################################################################
     -->
-    <div class="training">
-        <h2>Formation</h2>
-        <ul class="training-list">
-            <li class="trainig-list list_item">Baccalauréat littéraire
-                <dl>
-                    <dt>Obtenu en 2013 au Lycée du Forez (Loire)</dt>
-                </dl>
-            </li>
-            <li class="training-list list_item">Licence d'Histoire
-                <dl>
-                    <dt>Obtenue en 2017 à l'Université Blaise Pascal (Ancienne Université Clermont d'Auvergne)</dt>
-                </dl>
-            </li>
-            <li class="training-list list_item">Brevet de Technicien Supérieur Services Informatiques aux Organisations
-                <dl>
-                    <dt>Option B: Solutions et Applications Métiers</dt>
-                    <dt>En cours de formation au CNED depuis Septembre 2019</dt>
-                    <dt>Optention du diplome prévue en Juin 2021</dt>
-                </dl>
-            </li>
-        </ul>
-    </div>
-    <!-- 
+        <div class="rightColumn training">
+            <h2>Formation</h2>
+            <ul class="training-list">
+                <li class="trainig-list list_item">Baccalauréat littéraire
+                    <dl>
+                        <dt>Obtenu en 2013 au Lycée du Forez (Loire)</dt>
+                    </dl>
+                </li>
+                <li class="training-list list_item">Licence d'Histoire
+                    <dl>
+                        <dt>Obtenue en 2017 à l'Université Blaise Pascal (Ancienne Université Clermont d'Auvergne)</dt>
+                    </dl>
+                </li>
+                <li class="training-list list_item">Brevet de Technicien Supérieur Services Informatiques aux
+                    Organisations
+                    <dl>
+                        <dt>Option B: Solutions et Applications Métiers</dt>
+                        <dt>En cours de formation au CNED depuis Septembre 2019</dt>
+                        <dt>Optention du diplome prévue en Juin 2021</dt>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <!-- 
         ####################################################################################
                                         Work Experiences
         ####################################################################################
     -->
-    <div class="Work Experiences">
-        <h2>Expériences</h2>
-        <ul class="work-list">
-            <li class="work-list list_item"> Stage de 10 semaines au sein de l'entreprise
-                <a href="https://bellybutton-group.com/">BellyButtonGroup</a>
-                <dl>
-                    <dt>Novembre 2020 - Janvier 2021</dt>
-                    <dt>Société spécialisée en marketing d'influence</dt>
-                    <dt>Réalisation pour cette entreprise d'un "dashboard" de gestion des Influenceurs partenaires</dt>
-                    <dt>Développement "Back-end" avec le Framework Symfony</dt>
-                </dl>
-            </li>
-            <li class="work-list list_item">Equipier polyvalent
-                <dl>
-                    <dt>Février 2016 - Juillet 2017</dt>
-                    <dt>Préparation en cuisine</dt>
-                </dl>
-            </li>
-        </ul>
-    </div>
-    <!-- 
+        <div class="rightColumn workExperiences">
+            <h2>Expériences</h2>
+            <ul class="work-list">
+                <li class="work-list list_item"> Stage de 10 semaines au sein de l'entreprise
+                    <a href="https://bellybutton-group.com/">BellyButtonGroup</a>
+                    <dl>
+                        <dt>Novembre 2020 - Janvier 2021</dt>
+                        <dt>Société spécialisée en marketing d'influence</dt>
+                        <dt>Réalisation pour cette entreprise d'un "dashboard" de gestion des Influenceurs partenaires
+                        </dt>
+                        <dt>Développement "Back-end" avec le Framework Symfony</dt>
+                    </dl>
+                </li>
+                <li class="work-list list_item">Equipier polyvalent
+                    <dl>
+                        <dt>Février 2016 - Juillet 2017</dt>
+                        <dt>Préparation en cuisine</dt>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <!-- 
         ####################################################################################
                                         Skills
         ####################################################################################
     -->
-    <div class="Skills">
-        <h2> Compétences</h2>
-        <ul class="Skills-list">
-            <li class="Skills-list list_item">
-                <label for="PHP">PHP: </label>
-                <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
-            </li>
-            <li class="Skills-list list_item">
-                <label for="Symfony">Symfony: </label>
-                <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
-            </li>
-            <li class="Skills-list list_item">
-                <label for="HTML/CSS">HTML/CSS: </label>
-                <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
-            </li>
-            <li class="Skills-list list_item">
-                <label for="C#">C#: </label>
-                <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
-            </li>
-            <li class="Skills-list list_item">
-                <label for="C++">C++: </label>
-                <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
-            </li>
-            <li class="Skills-list list_item">
-                <label for="Linux">Linux: </label>
-                <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
-            </li>
-        </ul>
+        <div class="rightColumn Skills">
+            <h2> Compétences</h2>
+            <ul class="Skills-list">
+                <li class="Skills-list list_item">
+                    <label for="PHP">PHP: </label>
+                    <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
+                </li>
+                <li class="Skills-list list_item">
+                    <label for="Symfony">Symfony: </label>
+                    <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
+                </li>
+                <li class="Skills-list list_item">
+                    <label for="HTML/CSS">HTML/CSS: </label>
+                    <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
+                </li>
+                <li class="Skills-list list_item">
+                    <label for="C#">C#: </label>
+                    <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
+                </li>
+                <li class="Skills-list list_item">
+                    <label for="C++">C++: </label>
+                    <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
+                </li>
+                <li class="Skills-list list_item">
+                    <label for="Linux">Linux: </label>
+                    <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
+                </li>
+            </ul>
 
+        </div>
     </div>
 </body>
 
