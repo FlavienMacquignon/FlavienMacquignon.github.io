@@ -36,10 +36,11 @@
                 border-color: #6B9D9D;
 
             }
-            .about{
+
+            .about {
                 position: static;
-                margin:5px;
-                padding:10px;
+                margin: 5px;
+                padding: 10px;
             }
 
 
@@ -74,10 +75,18 @@
                 text-align-last: justify;
                 font: 20px "Castoro", serif;
             }
+            /* TODO maybe a color code for each list*/
+            .Skills-list::marker{
+                color:blue;
+            }
+            .Skills h2{
+                color: blue;
+            }
         }
 
         @media print {
             /* TODO Check for specific CSS here */
+            /* TODO fix the box arround my name */
 
             body,
             div {
@@ -87,6 +96,21 @@
             h1,
             .top_title {
                 font: 45px;
+            }
+            #noscript,
+            #link_vcf{
+                visibility: hidden;
+            }
+            .document{
+                display: flex;
+            }
+            .leftColumn {
+                flex: 35%;
+                float: left;
+            }
+            .rightColumn {
+                flex: 65%;
+                display: block;
             }
         }
     </style>
@@ -105,11 +129,11 @@
                                         Contact Information
         ####################################################################################
     -->
-            <div id="vCard" class="contact_vcard">     
+            <div id="vCard" class="contact_vcard">
                 <h4>Informations Personnelles</h4>
                 <div class="name_class">
                     <span class="attribute">Nom: </span> <span class="name" id="FN">Flavien Macquignon</span>
-                    
+
                 </div>
                 <br>
                 <div class="age_class">
@@ -156,7 +180,8 @@
                 </div>
 
                 <div class="phone_class">
-                    <span class="attribute">Téléphone: </span> <span class="mobile"><a href="tel:+3388005340" id="CELL">06 88 00 53 40</a></span> 
+                    <span class="attribute">Téléphone: </span> <span class="mobile"><a href="tel:+3388005340"
+                            id="CELL">06 88 00 53 40</a></span>
                     <span class="separator">--</span>
                     <span class="corded"> <a href="tel:+33443114208" id="HOME">04 43 11 42 08<a></span>
                 </div>
@@ -186,7 +211,7 @@
                 </script>
 
                 <button id="noscript" onclick="createVCF()" style="display:none">Télécharger ma carte de visite</button>
-                <noscript><button><a href="Flavien Macquignon.vcf">Télécharger ma carte de
+                <noscript id="link_vcf"><button><a href="Flavien Macquignon.vcf">Télécharger ma carte de
                             visite</a></button></noscript>
                 <script>
                     function init() {
@@ -199,9 +224,12 @@
             <div class="about">
                 <h4>A propos de moi</h4>
                 <!-- TODO complete about me tab-->
-                <p class="about_me"> 
-                    Sérieux et motivé, j'effectue actuellement une reconversion profesionnelle vers une carrière dans le monde des nouvelles tecnologies.<br> 
-                    Issu d'une filière littéraire, j'ai décidé de poursuivre une passion que j'entretiens depuis l'adolescence. 
+                <p class="about_me">
+                    Sérieux et motivé, j'effectue actuellement une reconversion profesionnelle vers une carrière dans le
+                    monde du développement.<br>
+                    Issu d'une filière littéraire, cette reconcversion profesionnelle est pour moi l'occasion de poursuivre une passion que j'entretiens depuis
+                    l'adolescence. <br>
+
                 </p>
 
             </div>
@@ -275,36 +303,60 @@
                                         Skills
         ####################################################################################
     -->
-        <!--TODO Change the disposition here make two columns-->
-            <div class="Skills">
-                <h2> Compétences</h2>
-                <ul class="Skills-list">
-                    <li class="Skills-list list_item">
-                        <label for="PHP">PHP: </label>
-                        <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
-                    </li>
-                    <li class="Skills-list list_item">
-                        <label for="Symfony">Symfony: </label>
-                        <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
-                    </li>
-                    <li class="Skills-list list_item">
-                        <label for="HTML/CSS">HTML/CSS: </label>
-                        <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
-                    </li>
-                    <li class="Skills-list list_item">
-                        <label for="C#">C#: </label>
-                        <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
-                    </li>
-                    <li class="Skills-list list_item">
-                        <label for="C++">C++: </label>
-                        <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
-                    </li>
-                    <li class="Skills-list list_item">
-                        <label for="Linux">Linux: </label>
-                        <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
-                    </li>
-                </ul>
+            <!--TODO Change the disposition here make two columns-->
+            <!-- TODO Issue here, the meter tag does not work on print (not displayed on Firefox; Empty on chromium)-->
+            <div class="leftColumn">
+                <div class="Skills">
+                    <h2>Compétences:</h2>
+                    <div class="leftColumn">
+                        <ul class="Skills-list">
+                            <li class="Skills-list list_item">
+                                <label for="PHP">PHP: </label>
+                                <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="Symfony">Symfony: </label>
+                                <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="HTML/CSS">HTML/CSS: </label>
+                                <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rightColumn">
+                        <ul class="Skills-list">
+                            <li class="Skills-list list_item">
+                                <label for="C#">C#: </label>
+                                <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="C++">C++: </label>
+                                <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="Linux">Linux: </label>
+                                <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
+                            </li>
+                        </ul>
+                    </div>
 
+                </div>
+            </div>
+            <div class="rightColumn">
+                <div class="Languages">
+                    <h2>Langues:</h2>
+                    <ul class="Languages-list">
+                        <li class="Languages-list list_item">
+                            <label for="English">Anglais: </label>
+                            <meter id="English" value=8 min=0 max=10>8 out of 10</meter>
+                        </li>
+                        <li class="Languages-list list_item">
+                            <label class="French">Français: </label>
+                            <meter id="French" value=10 min=0 maix=10>10 out of 10 (Native)</meter>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
