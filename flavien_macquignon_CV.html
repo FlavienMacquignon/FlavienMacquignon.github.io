@@ -53,16 +53,16 @@
             .document {
                 display: flex;
                 padding: 5px;
+                text-align: initial;
             }
 
             .leftColumn {
-                flex: 35%;
+                flex: 40%;
                 float: left;
             }
 
-
             .rightColumn {
-                flex: 65%;
+                flex: 60%;
                 display: block;
             }
 
@@ -75,12 +75,34 @@
                 text-align-last: justify;
                 font: 20px "Castoro", serif;
             }
+
             /* TODO maybe a color code for each list*/
-            .Skills-list::marker{
-                color:blue;
-            }
-            .Skills h2{
+            .Skills-list::marker {
                 color: blue;
+            }
+
+            .Skills h2 {
+                color: blue;
+            }
+
+            .Skills-list-table {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                width: 100%;
+            }
+
+            /*TODO Fix issue here but three columns is good */
+            .leftColumn_Skills-list {
+                grid-template-columns: 100%;
+
+            }
+
+            .rightColumn_Skills-list {
+                grid-template-columns: 100%;
+            }
+
+            .Languages {
+                grid-template-columns: 100%;
             }
         }
 
@@ -97,17 +119,21 @@
             .top_title {
                 font: 45px;
             }
+
             #noscript,
-            #link_vcf{
+            #link_vcf {
                 visibility: hidden;
             }
-            .document{
+
+            .document {
                 display: flex;
             }
+
             .leftColumn {
                 flex: 35%;
                 float: left;
             }
+
             .rightColumn {
                 flex: 65%;
                 display: block;
@@ -227,7 +253,8 @@
                 <p class="about_me">
                     Sérieux et motivé, j'effectue actuellement une reconversion profesionnelle vers une carrière dans le
                     monde du développement.<br>
-                    Issu d'une filière littéraire, cette reconcversion profesionnelle est pour moi l'occasion de poursuivre une passion que j'entretiens depuis
+                    Issu d'une filière littéraire, cette reconcversion profesionnelle est pour moi l'occasion de
+                    poursuivre une passion que j'entretiens depuis
                     l'adolescence. <br>
 
                 </p>
@@ -273,7 +300,7 @@
             <div class="workExperiences">
                 <h2>Expériences</h2>
                 <ul class="work-list">
-                    <li class="work-list list_item"> Stage de 10 semaines au sein de l'entreprise
+                    <li class="work-list list_item"> Stage de 8 semaines au sein de l'entreprise
                         <a href="https://bellybutton-group.com/">BellyButtonGroup</a>
                         <dl>
                             <dt>Novembre 2020 - Janvier 2021</dt>
@@ -303,62 +330,62 @@
                                         Skills
         ####################################################################################
     -->
-            <!--TODO Change the disposition here make two columns-->
+            
             <!-- TODO Issue here, the meter tag does not work on print (not displayed on Firefox; Empty on chromium)-->
             <div class="leftColumn">
                 <div class="Skills">
                     <h2>Compétences:</h2>
-                    <div class="leftColumn">
-                        <ul class="Skills-list">
-                            <li class="Skills-list list_item">
-                                <label for="PHP">PHP: </label>
-                                <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
-                            </li>
-                            <li class="Skills-list list_item">
-                                <label for="Symfony">Symfony: </label>
-                                <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
-                            </li>
-                            <li class="Skills-list list_item">
-                                <label for="HTML/CSS">HTML/CSS: </label>
-                                <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
-                            </li>
-                        </ul>
+                    <div class="Skills-list-table">
+                        <div class="leftColumn_Skills-list">
+                            <ul class="Skills-list">
+                                <li class="Skills-list list_item">
+                                    <label for="PHP">PHP: </label>
+                                    <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
+                                </li>
+                                <li class="Skills-list list_item">
+                                    <label for="Symfony">Symfony: </label>
+                                    <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
+                                </li>
+                                <li class="Skills-list list_item">
+                                    <label for="HTML/CSS">HTML/CSS: </label>
+                                    <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightColumn_Skills-list">
+                            <ul class="Skills-list">
+                                <li class="Skills-list list_item">
+                                    <label for="C#">C#: </label>
+                                    <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
+                                </li>
+                                <li class="Skills-list list_item">
+                                    <label for="C++">C++: </label>
+                                    <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
+                                </li>
+                                <li class="Skills-list list_item">
+                                    <label for="Linux">Linux: </label>
+                                    <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Languages">
+                            <h2>Langues:</h2>
+                            <ul class="Languages-list">
+                                <li class="Languages-list list_item">
+                                    <label for="English">Anglais: </label>
+                                    <meter id="English" value=8 min=0 max=10>8 out of 10</meter>
+                                </li>
+                                <li class="Languages-list list_item">
+                                    <label class="French">Français: </label>
+                                    <meter id="French" value=10 min=0 maix=10>10 out of 10 (Native)</meter>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="rightColumn">
-                        <ul class="Skills-list">
-                            <li class="Skills-list list_item">
-                                <label for="C#">C#: </label>
-                                <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
-                            </li>
-                            <li class="Skills-list list_item">
-                                <label for="C++">C++: </label>
-                                <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
-                            </li>
-                            <li class="Skills-list list_item">
-                                <label for="Linux">Linux: </label>
-                                <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-            <div class="rightColumn">
-                <div class="Languages">
-                    <h2>Langues:</h2>
-                    <ul class="Languages-list">
-                        <li class="Languages-list list_item">
-                            <label for="English">Anglais: </label>
-                            <meter id="English" value=8 min=0 max=10>8 out of 10</meter>
-                        </li>
-                        <li class="Languages-list list_item">
-                            <label class="French">Français: </label>
-                            <meter id="French" value=10 min=0 maix=10>10 out of 10 (Native)</meter>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 
