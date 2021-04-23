@@ -56,14 +56,29 @@
                 text-align: initial;
             }
 
+            .training-list::marker{
+                color:lightslategray;
+            }
+            .work-list::marker{
+                color: lightgrey;
+            }
             .leftColumn {
                 flex: 40%;
                 float: left;
+                border-right: black;
+                border-width: 2px;
+                border-right-style: solid;
             }
 
             .rightColumn {
                 flex: 60%;
+                padding-left: 25px;
+                margin-left: 5px;
+                box-sizing: content-box;
                 display: block;
+                border-left: black;
+                border-width: 2px;
+                border-left-style: solid;
             }
 
             .top_title {
@@ -78,11 +93,7 @@
 
             /* TODO maybe a color code for each list*/
             .Skills-list::marker {
-                color: blue;
-            }
-
-            .Skills h2 {
-                color: blue;
+                color: lightblue;
             }
 
             .Skills-list-table {
@@ -103,6 +114,9 @@
 
             .Languages {
                 grid-template-columns: 100%;
+            }
+            .Languages-list::marker{
+                color: lightcoral;
             }
         }
 
@@ -154,7 +168,7 @@
         ####################################################################################
                                         Contact Information
         ####################################################################################
-    -->
+            -->
             <div id="vCard" class="contact_vcard">
                 <h4>Informations Personnelles</h4>
                 <div class="name_class">
@@ -249,14 +263,12 @@
             </div>
             <div class="about">
                 <h4>A propos de moi</h4>
-                <!-- TODO complete about me tab-->
                 <p class="about_me">
-                    Sérieux et motivé, j'effectue actuellement une reconversion profesionnelle vers une carrière dans le
-                    monde du développement.<br>
-                    Issu d'une filière littéraire, cette reconcversion profesionnelle est pour moi l'occasion de
-                    poursuivre une passion que j'entretiens depuis
-                    l'adolescence. <br>
-
+                    Je suis agé de 25 ans et j'effectue actuellement une reconversion professionnelle afin de travailler
+                    en tant que développeur. <br>
+                    Issu d'une filière littéraire, je suis passionné d'informatique. Je suis ouvert et curieux. Je
+                    travaille aussi bien seul qu'en équipe. Sérieux et motivé, j'aimerais mettre ma rigueur au service
+                    de ce métier.
                 </p>
 
             </div>
@@ -270,6 +282,7 @@
         <div class="rightColumn">
             <div class="training">
                 <h2>Formation</h2>
+                <!-- TODO fix first marker here -->
                 <ul class="training-list">
                     <li class="trainig-list list_item">Baccalauréat littéraire
                         <dl>
@@ -330,60 +343,58 @@
                                         Skills
         ####################################################################################
     -->
-            
             <!-- TODO Issue here, the meter tag does not work on print (not displayed on Firefox; Empty on chromium)-->
-            <div class="leftColumn">
-                <div class="Skills">
-                    <h2>Compétences:</h2>
-                    <div class="Skills-list-table">
-                        <div class="leftColumn_Skills-list">
-                            <ul class="Skills-list">
-                                <li class="Skills-list list_item">
-                                    <label for="PHP">PHP: </label>
-                                    <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
-                                </li>
-                                <li class="Skills-list list_item">
-                                    <label for="Symfony">Symfony: </label>
-                                    <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
-                                </li>
-                                <li class="Skills-list list_item">
-                                    <label for="HTML/CSS">HTML/CSS: </label>
-                                    <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="rightColumn_Skills-list">
-                            <ul class="Skills-list">
-                                <li class="Skills-list list_item">
-                                    <label for="C#">C#: </label>
-                                    <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
-                                </li>
-                                <li class="Skills-list list_item">
-                                    <label for="C++">C++: </label>
-                                    <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
-                                </li>
-                                <li class="Skills-list list_item">
-                                    <label for="Linux">Linux: </label>
-                                    <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="Languages">
-                            <h2>Langues:</h2>
-                            <ul class="Languages-list">
-                                <li class="Languages-list list_item">
-                                    <label for="English">Anglais: </label>
-                                    <meter id="English" value=8 min=0 max=10>8 out of 10</meter>
-                                </li>
-                                <li class="Languages-list list_item">
-                                    <label class="French">Français: </label>
-                                    <meter id="French" value=10 min=0 maix=10>10 out of 10 (Native)</meter>
-                                </li>
-                            </ul>
-                        </div>
+
+            <div class="Skills">
+                <h2>Compétences:</h2>
+                <div class="Skills-list-table">
+                    <div class="leftColumn_Skills-list">
+                        <ul class="Skills-list">
+                            <li class="Skills-list list_item">
+                                <label for="PHP">PHP: </label>
+                                <meter id="PHP" value=6 min=0 max=10>6 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="Symfony">Symfony: </label>
+                                <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="HTML/CSS">HTML/CSS: </label>
+                                <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rightColumn_Skills-list">
+                        <ul class="Skills-list">
+                            <li class="Skills-list list_item">
+                                <label for="C#">C#: </label>
+                                <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="C++">C++: </label>
+                                <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="Linux">Linux: </label>
+                                <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="Languages">
+                        <ul class="Languages-list">
+                            <li class="Languages-list list_item">
+                                <label for="English">Anglais: </label>
+                                <meter id="English" value=8 min=0 max=10>8 out of 10</meter>
+                            </li>
+                            <li class="Languages-list list_item">
+                                <label class="French">Français: </label>
+                                <meter id="French" value=10 min=0 maix=10>10 out of 10 (Native)</meter>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     </div>
