@@ -211,13 +211,13 @@
             .Languages {
                 grid-template-columns: 100%;
             }
-            meter{
+
+            meter {
                 -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
             }
-            meter::-webkit-meter-bar{
-                -webkit-meter-optimum-value:0;
-                -webkit-meter-bar:0, 5, 10;
-            }
+
         }
     </style>
 </head>
@@ -430,8 +430,8 @@
                     <div class="rightColumn_Skills-list">
                         <ul class="Skills-list">
                             <li class="Skills-list list_item">
-                                <label for="C#">C#: </label>
-                                <meter id="C#" value=7 min=0 max=10>7 out of 10</meter>
+                                <label for="C_Sharp">C#: </label>
+                                <meter id="C_Sharp" value=7 min=0 max=10 placeholder="7 out of 10">7 out of 10</meter>
                             </li>
                             <li class="Skills-list list_item">
                                 <label for="C++">C++: </label>
