@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio Macquignon Flavien">
+    <meta name="author" content="Flavien Macquignon">
+    <title>Flavien Macquignon Portfolio</title>
+
+    <!-- CDNs-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="icon" type="/image/svg+xml" href="media/briefcase-fill.svg">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+        <div class="container">
+            <!-- Return to Home -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar"> <span class="sr-only">Navigation raccourcie</span> ☰</button>
+            <a class="navbar-brand" href="#">Mon Portfolio</a>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span class="fa fa-home"></span> Accueil
+                        </a>
+                    </li>
+                    <!-- Link to my CV -->
+                    <li class="nav-item">
+                        <a href="under_construction.html" class="nav-link">
+                            <span class="fa fa-id-badge"></span> CV
+                        </a>
+                    </li>
+                    <!-- My projects -->
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button">
+                            <span class="fa fa-list-alt"></span> Réalisations <span class="caret"></span>
+                        </a>
+                        <!-- Autonomy -->
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation" class="dropdown-header dropdown-item">En Autonomie</li>
+                            <li role="presentation" class="dropdown-item">
+                                <a role="menuitem" href="android.html">Applications Android</a>
+                            </li>
+                            <li role="presentation" class="dropdown-item">
+                                <a role="menuitem" href="under_construction.html">Site Web</a>
+                            </li>
+                            <li role="presentation" class="dropdown-item">
+                                <a role="menuitem" href="selfhosted.html"> <span
+                                        class="bi bi-house-door-fill"></span>Auto-hébergé</a>
+                            </li>
+
+                            <!-- Divider -->
+                            <li role="presentation" class="dropdown-divider"></li>
+
+                            <!-- In Company -->
+                            <li role="presentation" class="dropdown-header dropdown-item"> En entreprise</li>
+                            <li role="presentation" class="dropdown-item">
+                                <a role="menuitem" href="back_end.html">Influenceur Management</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Situations professionnelle BTS -->
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"> <span
+                                class="fa fa-graduation-cap">Jury E4 BTS SIO</span></a>
+                        <!-- TODO Check wideness on mobiles devices -->
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header dropdown-item" role="presentation">
+                                <a href="ppe_php.html"> Situation professionnelle n°1
+                                    (Application PHP)</a>
+                                <dl>
+                                    <dd>
+                                        Testez l'application sur <a
+                                            href="https://flavien.educationhost.cloud/PPE_GSB/">cette page!</a>
+                                    </dd>
+                                    <dd>
+                                        Pour retrouver le code source de cette application, </br>
+                                        <a href="https://github.com/FlavienMacquignon/GSB_PPE">rendez-vous ici !</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="dropdown-header dropdown-item" role="presentation">
+                                <a href="android.html">Situation professionnelle n°2 (Application Android) </a>
+                                <dl>
+                                    <dd>
+                                        Pour retrouver le code source de cette application, </br>
+                                        <a href="https://github.com/FlavienMacquignon/GSB_Android">rendez-vous ici !</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href=mailto:flavien_macquignon@fastmail.fr class="nav-link"><span
+                                class="fa fa-envelope"></span> Contactez-moi !</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Jumbotron Links-->
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Réalisation d'une WebApp en PHP</h1>
+                <p>Réalisation, pour le compte de l'entreprise BellyButtonGroup, d'un back-end de gestion des Influenceurs.</p>
+                <p>L'entreprise spécialisée dans le marketing sur les réseaux sociaux (Youtube, Instagram et TikTok notamment) a exprimé le besoin de centraliser sa force  </p>
+            </div>
+        </section>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" src="media/symfony.png" alt="Symfony_Logo">
+                            <div class="card-body">
+                                <p class="card-text">Gestion de base de données relationnelles</p>
+                                <p class="card-text">Adaptation d'une base de données pour les besoins spécifiques de l'entreprise en utilisant <a href="https://symfony.com/doc/current/doctrine.html">l'ORM Doctrine</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" src="media/MVC.png" alt="Structuration MVC">
+                            <div class="card-body">
+                                <p class="card-text">Construction d'un back-end en PHP avec ajout/modification et Suppression des Influenceurs</p>
+                                <p class="card-text">Utilisation du Framework <a href="https://symfony.com/">Symphony</a> déjà utilisé pour gérer les comptes entreprises et influenceurs du site <a href="https://bellybutton-group.com/">BellyButtonGroup</a></p>
+                            </div>
+                        </div>
+                    </div>
+    </main>
+    <!-- Copyright-->
+    <footer>
+        <div class="container">
+            <div class="row"></div>
+            <hr>
+            <p class="text-center" id="copyright">© Flavien Macquignon 2020</p>
+            </hr>
+        </div>
+    </footer>
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
