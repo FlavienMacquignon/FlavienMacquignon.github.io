@@ -37,13 +37,7 @@
 
             }
 
-            .about {
-                position: static;
-                margin: 5px;
-                padding: 10px;
-            }
-
-
+            .about,
             .contact_vcard {
                 position: static;
                 margin: 5px;
@@ -56,12 +50,14 @@
                 text-align: initial;
             }
 
-            .training-list::marker{
-                color:lightslategray;
-            }
-            .work-list::marker{
+            .training-list::marker {
                 color: lightgrey;
             }
+
+            .work-list::marker {
+                color: lightslategray;
+            }
+
             .leftColumn {
                 flex: 40%;
                 float: left;
@@ -91,7 +87,7 @@
                 font: 20px "Castoro", serif;
             }
 
-            /* TODO maybe a color code for each list*/
+
             .Skills-list::marker {
                 color: lightblue;
             }
@@ -102,7 +98,6 @@
                 width: 100%;
             }
 
-            /*TODO Fix issue here but three columns is good */
             .leftColumn_Skills-list {
                 grid-template-columns: 100%;
 
@@ -115,18 +110,25 @@
             .Languages {
                 grid-template-columns: 100%;
             }
-            .Languages-list::marker{
+
+            .Languages-list::marker {
                 color: lightcoral;
             }
         }
 
         @media print {
-            /* TODO Check for specific CSS here */
-            /* TODO fix the box arround my name */
 
-            body,
-            div {
-                font: 15;
+            div,
+            .top_header {
+                font: 15px "Castoro", serif;
+                display: inline-block;
+            }
+
+            .about,
+            .contact_vcard {
+                position: static;
+                margin: 5px;
+                padding: 10px;
             }
 
             h1,
@@ -143,14 +145,78 @@
                 display: flex;
             }
 
+            .Skills-list-table {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                width: 100%;
+            }
+
+            .leftColumn_Skills-list {
+                grid-template-columns: 100%;
+
+            }
+
+            .rightColumn_Skills-list {
+                grid-template-columns: 100%;
+            }
+
+            .Languages {
+                grid-template-columns: 100%;
+            }
+
             .leftColumn {
-                flex: 35%;
+                flex: 40%;
                 float: left;
+                border-right: black;
+                border-width: 2px;
+                border-right-style: solid;
             }
 
             .rightColumn {
-                flex: 65%;
+                flex: 60%;
+                padding-left: 25px;
+                margin-left: 5px;
+                box-sizing: content-box;
                 display: block;
+                border-left: black;
+                border-width: 2px;
+                border-left-style: solid;
+            }
+
+            .top_title {
+                font: 35px "Poppins", serif;
+                font-weight: bold;
+            }
+
+            .title {
+                text-align-last: justify;
+                font: 20px "Castoro", serif;
+            }
+
+            .Skills-list-table {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                width: 100%;
+            }
+
+            .leftColumn_Skills-list {
+                grid-template-columns: 100%;
+
+            }
+
+            .rightColumn_Skills-list {
+                grid-template-columns: 100%;
+            }
+
+            .Languages {
+                grid-template-columns: 100%;
+            }
+            meter{
+                -webkit-appearance: none;
+            }
+            meter::-webkit-meter-bar{
+                -webkit-meter-optimum-value:0;
+                -webkit-meter-bar:0, 5, 10;
             }
         }
     </style>
@@ -282,9 +348,8 @@
         <div class="rightColumn">
             <div class="training">
                 <h2>Formation</h2>
-                <!-- TODO fix first marker here -->
                 <ul class="training-list">
-                    <li class="trainig-list list_item">Baccalauréat littéraire
+                    <li class="training-list list_item">Baccalauréat littéraire
                         <dl>
                             <dt>Obtenu en 2013 au Lycée du Forez (Loire)</dt>
                         </dl>
@@ -343,8 +408,6 @@
                                         Skills
         ####################################################################################
     -->
-            <!-- TODO Issue here, the meter tag does not work on print (not displayed on Firefox; Empty on chromium)-->
-
             <div class="Skills">
                 <h2>Compétences:</h2>
                 <div class="Skills-list-table">
@@ -397,7 +460,5 @@
 
         </div>
     </div>
-    </div>
 </body>
-
 </html>
