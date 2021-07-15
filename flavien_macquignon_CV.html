@@ -276,7 +276,7 @@
                                 document.getElementById('age').innerHTML = myAge;
                             }
                         </script>
-                        <noscript>25</noscript>
+                        <noscript>26</noscript>
                         <span id="age"></span> ans (1995)
                     </span>
                 </div>
@@ -330,7 +330,41 @@
             <div class="about">
                 <h4>A propos de moi</h4>
                 <p class="about_me">
-                    Je suis agé de 25 ans et j'effectue actuellement une reconversion professionnelle afin de travailler
+                    Je suis agé de <span class="age">
+                        <script>
+                            window.onload = function () {
+                                let myAge = 0;
+                                let now = new Date();
+                                let yearNow = now.getFullYear();
+                                let monthNow = now.getMonth();
+                                let dayNow = now.getDate();
+                                monthNow++;
+                                if (monthNow.toString().length < 2) {
+                                    monthNow = monthNow.toString();
+                                    monthNow = "0" + monthNow;
+                                }
+                                if (monthNow <= 07) {
+                                    myAge--;
+
+                                    if (dayNow == 2 && monthNow == 07) {
+                                        console.log("It's birthday time!");
+                                        myAge += yearNow - 1995;
+                                    }
+                                    if (dayNow > 2 && monthNow >= 7) {
+                                        myAge = yearNow - 1995;
+                                    }
+                                    else {
+                                        myAge += yearNow - 1995;
+                                    }
+                                }
+                                else {
+                                    myAge += yearNow - 1995;
+                                }
+                                document.getElementById('age').innerHTML = myAge;
+                            }
+                        </script>
+                        <noscript>26</noscript>
+                        <span id="age"></span> ans et j'effectue actuellement une reconversion professionnelle afin de travailler
                     en tant que développeur. <br>
                     Issu d'une filière littéraire, je suis passionné d'informatique. Je suis ouvert et curieux. Je
                     travaille aussi bien seul qu'en équipe. Sérieux et motivé, j'aimerais mettre ma rigueur au service
