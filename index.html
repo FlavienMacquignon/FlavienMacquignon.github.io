@@ -60,6 +60,18 @@
                             <!-- Divider -->
                             <li role="presentation" class="dropdown-divider"></li>
 
+                            <!-- Evaluation BTS SIO-->
+                            <li role="presentation" class="dropdown-header dropdown-item">Réalisation évaluée en BTS</li>
+                            <li role="presentation" class="dropdown-item">
+                                <a href="ppe_php.html"> Situation professionnelle n°1
+                                    (Application PHP)</a>
+                            </li>
+                            <li role="presentation" class="dropdown-item">
+                                <a href="android.html">Situation professionnelle n°2 (Application Android) </a>
+                            </li>
+                            <!-- Divider-->
+                            <li role="presentation" class="dropdown-divider"></li>
+
                             <!-- In Company -->
                             <li role="presentation" class="dropdown-header dropdown-item"> En entreprise</li>
                             <li role="presentation" class="dropdown-item">
@@ -69,31 +81,7 @@
                     </li>
                     <!-- Situations professionnelle BTS -->
                     <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"> <span
-                                class="fa fa-graduation-cap">Jury E4 BTS SIO</span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="dropdown-header dropdown-item" role="presentation">
-                                <a href="ppe_php.html"> Situation professionnelle n°1
-                                    (Application PHP)</a>
-                                <dl>
-                                    <dd>
-                                        Testez l'application sur <a
-                                            href="https://flavien.educationhost.cloud/PPE_GSB/">cette page!</a>
-                                    </dd>
-                                    <dd>
-                                        Pour retrouver le code source de cette application, </br>
-                                        <a href="https://github.com/FlavienMacquignon/GSB_PPE">rendez-vous ici !</a>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li class="dropdown-header dropdown-item" role="presentation">
-                                <a href="android.html">Situation professionnelle n°2 (Application Android) </a>
-                                <dl>
-                                    <dd>
-                                        Pour retrouver le code source de cette application, </br>
-                                        <a href="https://github.com/FlavienMacquignon/GSB_Android">rendez-vous ici !</a>
-                                    </dd>
-                                </dl>
+                        
                             </li>
                         </ul>
 
@@ -106,12 +94,44 @@
     </nav>
 
     <!-- Core -->
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
         <p></p>
         <h1>Bienvenu sur mon Portfolio</h1>
-        <p class="text-justify">Je m'apelle Flavien Macquignon, j'ai 25 ans et je suis actuellement étudiant en BTS SIO
-            (Service Informatique
-            aux Organisations). </br> Ce site a pour vocation de me présenter en tant que personne et en tant que futur
+        <p class=>Je m'apelle Flavien Macquignon, j'ai <span class="age">
+            <script>
+                window.onload = function () {
+                    let myAge = 0;
+                    let now = new Date();
+                    let yearNow = now.getFullYear();
+                    let monthNow = now.getMonth();
+                    let dayNow = now.getDate();
+                    monthNow++;
+                    if (monthNow.toString().length < 2) {
+                        monthNow = monthNow.toString();
+                        monthNow = "0" + monthNow;
+                    }
+                    if (monthNow <= 07) {
+                        myAge--;
+
+                        if (dayNow == 2 && monthNow == 07) {
+                            console.log("It's birthday time!");
+                            myAge += yearNow - 1995;
+                        }
+                        if (dayNow > 2 && monthNow >= 7) {
+                            myAge = yearNow - 1995;
+                        }
+                        else {
+                            myAge += yearNow - 1995;
+                        }
+                    }
+                    else {
+                        myAge += yearNow - 1995;
+                    }
+                    document.getElementById('age').innerHTML = myAge;
+                }
+            </script>
+            <span id="age"></span>
+        <noscript>26</noscript> ans et titulaire d'un BTS SIO (Service Informatique aux Organisations). </br> Ce site a pour vocation de me présenter en tant que personne et en tant que futur
             profesionnel de l'industrie. </p>
     </div>
     <!-- Footer -->
@@ -119,10 +139,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <h2>Étudiant au CNED</h2>
+                    <!-- TODO expand that-->
+                    <h2><a href="under_construction.html">Étudiant au CNED</a></h2>
                     <p>J'ai choisi de suivre le BTS SIO à distance via le CNED car je souhaitais pourvoir avancer à mon
-                        rythme, choisir moi-même mon emploi du temps, apprendre à être autonome, pouvoir utiliser les
-                        outils de collaboration. Cela m'a montré que j'étais capable de me fixer moi-même des
+                        rythme, choisir moi-même mon emploi du temps, apprendre à être autonome. Cela m'a montré que j'étais capable de me fixer moi-même des
                         contraintes, des limites et des objectifs à atteindre !
                     </p>
                 </div>
