@@ -61,7 +61,8 @@
                             <li role="presentation" class="dropdown-divider"></li>
 
                             <!-- Evaluation BTS SIO-->
-                            <li role="presentation" class="dropdown-header dropdown-item">Réalisation évaluée en BTS</li>
+                            <li role="presentation" class="dropdown-header dropdown-item">Réalisation évaluée en BTS
+                            </li>
                             <li role="presentation" class="dropdown-item">
                                 <a href="ppe_php.html"> Situation professionnelle n°1
                                     (Application PHP)</a>
@@ -90,41 +91,42 @@
         <p></p>
         <h1>Bienvenu sur mon Portfolio</h1>
         <p class=>Je m'apelle Flavien Macquignon, j'ai <span class="age">
-            <script>
-                window.onload = function () {
-                    let myAge = 0;
-                    let now = new Date();
-                    let yearNow = now.getFullYear();
-                    let monthNow = now.getMonth();
-                    let dayNow = now.getDate();
-                    monthNow++;
-                    if (monthNow.toString().length < 2) {
-                        monthNow = monthNow.toString();
-                        monthNow = "0" + monthNow;
-                    }
-                    if (monthNow <= 07) {
-                        myAge--;
-
-                        if (dayNow == 2 && monthNow == 07) {
-                            console.log("It's birthday time!");
-                            myAge += yearNow - 1995;
+                <script>
+                    window.onload = function () {
+                        let myAge = 0;
+                        let now = new Date();
+                        let yearNow = now.getFullYear();
+                        let monthNow = now.getMonth();
+                        let dayNow = now.getDate();
+                        monthNow++;
+                        if (monthNow.toString().length < 2) {
+                            monthNow = monthNow.toString();
+                            monthNow = "0" + monthNow;
                         }
-                        if (dayNow > 2 && monthNow >= 7) {
-                            myAge = yearNow - 1995;
+                        if (monthNow <= 07) {
+                            myAge--;
+
+                            if (dayNow == 2 && monthNow == 07) {
+                                console.log("It's birthday time!");
+                                myAge += yearNow - 1995;
+                            }
+                            if (dayNow > 2 && monthNow >= 7) {
+                                myAge = yearNow - 1995;
+                            }
+                            else {
+                                myAge += yearNow - 1995;
+                            }
                         }
                         else {
                             myAge += yearNow - 1995;
                         }
+                        document.getElementById('age').innerHTML = myAge;
                     }
-                    else {
-                        myAge += yearNow - 1995;
-                    }
-                    document.getElementById('age').innerHTML = myAge;
-                }
-            </script>
-            <span id="age"></span>
-        <noscript>26</noscript> ans et titulaire d'un BTS SIO (Service Informatique aux Organisations). </br> Ce site a pour vocation de me présenter en tant que personne et en tant que futur
-            profesionnel de l'industrie. </p>
+                </script>
+                <span id="age"></span>
+                <noscript>26</noscript> ans et titulaire d'un BTS SIO (Service Informatique aux Organisations). </br> Ce
+                site a pour vocation de me présenter en tant que personne et en tant que futur
+                profesionnel de l'industrie. </p>
     </div>
     <!-- Footer -->
     <footer>
@@ -134,15 +136,20 @@
                     <!-- TODO expand that-->
                     <h2><a href="under_construction.html">Étudiant au CNED</a></h2>
                     <p>J'ai choisi de suivre le BTS SIO à distance via le CNED car je souhaitais pourvoir avancer à mon
-                        rythme, choisir moi-même mon emploi du temps, apprendre à être autonome. Cela m'a montré que j'étais capable de me fixer moi-même des
-                        contraintes, des limites et des objectifs à atteindre ! Cette expérience m'a effectivement permis de développer ces compétences mais aussi de découvrir des outils profesionnels tels que GIT, Visual Studio ou encore Android Studio.
+                        rythme, choisir moi-même mon emploi du temps, apprendre à être autonome. Cela m'a montré que
+                        j'étais capable de me fixer moi-même des
+                        contraintes, des limites et des objectifs à atteindre ! Cette expérience m'a effectivement
+                        permis de développer ces compétences mais aussi de découvrir des outils profesionnels tels que
+                        GIT, Visual Studio ou encore Android Studio.
                     </p>
                 </div>
                 <div class="col-lg-4">
                     <h2>LE BTS SIO </h2>
                     <p>Lors d'une reconversion profesionelle, le choix d'un BTS SIO m'est apparu comme une évidence me
                         permettant d'assouvir une passion que j'ai depuis l'adolescence.</p>
-                        <p>Le choix de l'option SLAM m'a permis de me familiariser avec différents langages de programmation mais aussi de découvrir des techniques de conceptions comme la PPO ou la réalisation de diagrammes UML.</p>
+                    <p>Le choix de l'option SLAM m'a permis de me familiariser avec différents langages de programmation
+                        mais aussi de découvrir des techniques de conceptions comme la PPO ou la réalisation de
+                        diagrammes UML.</p>
                     <p><a class="btn btn-secondary"
                             href="https://fr.wikipedia.org/wiki/Brevet_de_technicien_supérieur_-_Services_informatiques_aux_organisations"
                             target="_blank" role="button">En savoir plus »</a>
