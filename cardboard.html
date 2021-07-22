@@ -8,60 +8,81 @@
     <meta name="description" content="Portfolio Macquignon Flavien">
     <meta name="author" content="Flavien Macquignon">
     <title>CardBoard Box</title>
-
-    <!-- CDNs-->
+    <!-- TODO maybe change this favicon ?-->
     <link rel="icon" type="/image/svg+xml" href="media/briefcase-fill.svg">
 </head>
-<body onunload="global_Save()" onload="retrieveSave()">
-    <h1 class="box_Counter_Display" style="display: block;"></h1>
-    <button class="make_Box" style="display: block;">Make a CardBoard Box</button>
-    <button class="emploiement" style="display: none;">Employ someone</button>
-    <script>
-    let emploiementB = false;
-    let date = new Date;
-    let now = date.getTime();
-    console.log("Time in MilliSecond since 1970"+ now);
-    let box_Counter = document.querySelector('.box_Counter_Display');
-    let box_Maker= document.querySelector('.make_Box');
-    let emploiement= document.querySelector(".emploiement");
-    let count ; 
-    retrieveSave();
-    updateDisplay();
 
-    box_Maker.addEventListener("click",()=>{
-        count++;
+<body>
+    <h1 class="boxCounterDisplay" style="display: block;"></h1>
+    <button class="make_Box" style="display: block;">Make a CardBoard Box</button>
+
+    <!-- TODO Display a counter for the number of employees-->
+    <!-- TODO Change position of this button-->
+    <button class="employementBtn" style="display: none;">Employ someone</button>
+    <h3 class="employeeCounterDisplay" style="display: none;"> </h3>
+    <script>
+        let empoyementB = false;
+        // TODO find a way to harvest this to autoincrement the cardboxCounter variable
+        let date = new Date;
+        let now = date.getTime();
+        console.log("Time in MilliSecond since 1970" + now);
+        let boxCounterDisplay = document.querySelector('.boxCounterDisplay');
+        let box_Maker = document.querySelector('.make_Box');
+        let employementBtn = document.querySelector('.employementBtn');
+        let employeeCounterDisplay= document.querySelector('.employeeCounterDisplay');
+        let cardboxCounter;
+        let employeesCounter=0;
+        retrieveSave();
         updateDisplay();
-    });
-    function visible(){
-        if (count>=100 && emploiementB==false) {
-            emploiement.style.display = "block";
-            emploiementB = true;
+        employementBtn.addEventListener("click",()=>{
+            employeesCounter++;
+            console.log("someone as a job");
+            console.log(employeesCounter);
+            updateDisplay();
+        })
+        box_Maker.addEventListener("click", () => {
+            cardboxCounter++;
+            updateDisplay();
+        });
+        function visible() {
+            if (cardboxCounter >= 100 && empoyementB == false) {
+                employementBtn.style.display="block";
+                empoyementB = true;
+            }
+            if (employeesCounter==1)
+            {
+                //FIXME this does not display counter
+                employeeCounterDisplay.style.display="block";
+            }
         }
-    }
-    function save(name, value){
-        localStorage.setItem(name, value);
-    }
-    function global_Save(){
-        save('Counter', count);
-        save('emploiementB', emploiementB);
-    }
-    function retrieveSave(){
-        if(localStorage.getItem('Counter')>=0)
-    {
-        count = localStorage.getItem('Counter');
-    }
-        if (localStorage.getItem('emploiementB')!=false)
-        {
-            emploiementB=true;
+        function save(name, value) {
+            localStorage.setItem(name, value);
         }
-    }
-    function updateDisplay(){
-      box_Counter.innerHTML = count;
-      visible(); 
-      save('Counter', count);
-      save('emploiementB', emploiementB);
-    };
+        function retrieveSave() {
+            if ('Counter' in localStorage) {
+                if (localStorage.getItem('Counter') >= 0) {
+                    cardboxCounter = localStorage.getItem('Counter');
+                }
+            }
+            else{ 
+                cardboxCounter= 0;
+            }
+        }
+        function employeeMakeBox(){
+            cardboxCounter++;
+        }
+        function updateDisplay() {
+            boxCounterDisplay.innerHTML = cardboxCounter;
+            visible();
+            save('Counter', cardboxCounter);
+            save('empoyementB', empoyementB);
+            if(employeesCounter > 1){
+                time= setInterval(employeeMakeBox,1000);
+            }
+            
+        };
     </script>
-        
+
 </body>
+
 </html>
