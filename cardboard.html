@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio Macquignon Flavien">
+    <meta name="author" content="Flavien Macquignon">
+    <title>CardBoard Box</title>
+
+    <!-- CDNs-->
+    <link rel="icon" type="/image/svg+xml" href="media/briefcase-fill.svg">
+</head>
+<body onunload="global_Save()" onload="retrieveSave()">
+    <h1 class="box_Counter_Display" style="display: block;"></h1>
+    <button class="make_Box" style="display: block;">Make a CardBoard Box</button>
+    <button class="emploiement" style="display: none;">Employ someone</button>
+    <script>
+    let emploiementB = false;
+    let date = new Date;
+    let now = date.getTime();
+    console.log("Time in MilliSecond since 1970"+ now);
+    let box_Counter = document.querySelector('.box_Counter_Display');
+    let box_Maker= document.querySelector('.make_Box');
+    let emploiement= document.querySelector(".emploiement");
+    let count ; 
+    retrieveSave();
+    updateDisplay();
+
+    box_Maker.addEventListener("click",()=>{
+        count++;
+        updateDisplay();
+    });
+    function visible(){
+        if (count>=100 && emploiementB==false) {
+            emploiement.style.display = "block";
+            emploiementB = true;
+        }
+    }
+    function save(name, value){
+        localStorage.setItem(name, value);
+    }
+    function global_Save(){
+        save('Counter', count);
+        save('emploiementB', emploiementB);
+    }
+    function retrieveSave(){
+        if(localStorage.getItem('Counter')>=0)
+    {
+        count = localStorage.getItem('Counter');
+    }
+        if (localStorage.getItem('emploiementB')!=false)
+        {
+            emploiementB=true;
+        }
+    }
+    function updateDisplay(){
+      box_Counter.innerHTML = count;
+      visible(); 
+      save('Counter', count);
+      save('emploiementB', emploiementB);
+    };
+    </script>
+        
+</body>
+</html>
