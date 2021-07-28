@@ -17,7 +17,7 @@
         @media screen {
 
             body {
-                width: 1080px;
+                width: 1280px;
             }
 
             div,
@@ -94,13 +94,17 @@
 
             .Skills-list-table {
                 display: grid;
-                grid-template-columns: auto auto auto;
+                grid-template-columns: auto auto auto auto;
                 width: 100%;
             }
 
             .leftColumn_Skills-list {
                 grid-template-columns: 100%;
 
+            }
+
+            .middleColumn_Skills-list {
+                grid-template-columns: 100%;
             }
 
             .rightColumn_Skills-list {
@@ -128,7 +132,7 @@
             .contact_vcard {
                 position: static;
                 margin: 5px;
-                padding: 10px;
+                padding: 8px;
             }
 
             h1,
@@ -174,7 +178,7 @@
 
             .rightColumn {
                 flex: 60%;
-                padding-left: 25px;
+                padding-left: 18px;
                 margin-left: 5px;
                 box-sizing: content-box;
                 display: block;
@@ -195,13 +199,17 @@
 
             .Skills-list-table {
                 display: grid;
-                grid-template-columns: auto auto auto;
+                grid-template-columns: auto auto auto auto;
                 width: 100%;
             }
 
             .leftColumn_Skills-list {
                 grid-template-columns: 100%;
 
+            }
+
+            .middleColumn_Skills-list {
+                grid-template-columns: 100%;
             }
 
             .rightColumn_Skills-list {
@@ -217,7 +225,6 @@
                 -moz-appearance: none;
                 appearance: none;
             }
-
         }
     </style>
 </head>
@@ -274,6 +281,7 @@
                                     myAge += yearNow - 1995;
                                 }
                                 document.getElementById('age').innerHTML = myAge;
+                                document.getElementById('age2').innerHTML = myAge;
                             }
                         </script>
                         <noscript>26</noscript>
@@ -330,44 +338,13 @@
             <div class="about">
                 <h4>A propos de moi</h4>
                 <p class="about_me">
-                    Je suis agé de <span class="age">
-                        <script>
-                            window.onload = function () {
-                                let myAge = 0;
-                                let now = new Date();
-                                let yearNow = now.getFullYear();
-                                let monthNow = now.getMonth();
-                                let dayNow = now.getDate();
-                                monthNow++;
-                                if (monthNow.toString().length < 2) {
-                                    monthNow = monthNow.toString();
-                                    monthNow = "0" + monthNow;
-                                }
-                                if (monthNow <= 07) {
-                                    myAge--;
-
-                                    if (dayNow == 2 && monthNow == 07) {
-                                        console.log("It's birthday time!");
-                                        myAge += yearNow - 1995;
-                                    }
-                                    if (dayNow > 2 && monthNow >= 7) {
-                                        myAge = yearNow - 1995;
-                                    }
-                                    else {
-                                        myAge += yearNow - 1995;
-                                    }
-                                }
-                                else {
-                                    myAge += yearNow - 1995;
-                                }
-                                document.getElementById('age').innerHTML = myAge;
-                            }
-                        </script>
-                        <noscript>26</noscript>
-                        <span id="age"></span> ans et j'effectue actuellement une reconversion professionnelle afin de travailler
+                    Je suis agé de<noscript>26</noscript>
+                    <span id="age2"></span> ans et j'effectue actuellement une reconversion professionnelle afin de
+                    travailler
                     en tant que développeur. <br>
                     Issu d'une filière littéraire, je suis passionné d'informatique. Je suis ouvert et curieux. Je
-                    travaille aussi bien seul qu'en équipe. Sérieux et motivé, j'aimerais mettre ma rigueur au service
+                    travaille aussi bien seul qu'en équipe. Sérieux et motivé, j'aimerais mettre ma rigueur au
+                    service
                     de ce métier.
                 </p>
 
@@ -398,7 +375,7 @@
                         Organisations
                         <dl>
                             <dt>Option B: Solutions et Applications Métiers</dt>
-                            <dt>Obtenu en Juin 2021</dt>
+                            <dt>Obtenu en Juin 2021 au Centre Nationnal d'Education à Distance</dt>
                         </dl>
                     </li>
                 </ul>
@@ -455,25 +432,45 @@
                                 <meter id="Symfony" value=4 min=0 max=10>4 out of 10</meter>
                             </li>
                             <li class="Skills-list list_item">
+                                <label for="C_Sharp">C#: </label>
+                                <meter id="C_Sharp" value=7 min=0 max=10 placeholder="7 out of 10">7 out of 10</meter>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="middleColumn_Skills-list">
+                        <ul class="Skills-list">
+
+                            <li class="Skills-list list_item">
                                 <label for="HTML/CSS">HTML/CSS: </label>
                                 <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
                             </li>
+                            <li class="Skills-list list_item">
+                                <label for="JS">Javascript:</label>
+                                <meter id="JS" value=5 min=0 max=10>5 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="Java">Java: </label>
+                                <meter id="Java" value=5 min=0 max=10>6 out of 10</meter>
+
+                            </li>
+
                         </ul>
                     </div>
                     <div class="rightColumn_Skills-list">
                         <ul class="Skills-list">
                             <li class="Skills-list list_item">
-                                <label for="C_Sharp">C#: </label>
-                                <meter id="C_Sharp" value=7 min=0 max=10 placeholder="7 out of 10">7 out of 10</meter>
-                            </li>
-                            <li class="Skills-list list_item">
                                 <label for="C++">C++: </label>
                                 <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
+                            </li>
+                            <li class="Skills-list list_item">
+                                <label for="Git">Git: </label>
+                                <meter id="Git" value=7 min=0 max=10>7 out of 10</meter>
                             </li>
                             <li class="Skills-list list_item">
                                 <label for="Linux">Linux: </label>
                                 <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
                             </li>
+
                         </ul>
                     </div>
                     <div class="Languages">
@@ -494,4 +491,5 @@
         </div>
     </div>
 </body>
+
 </html>
