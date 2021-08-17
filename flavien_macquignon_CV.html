@@ -9,7 +9,6 @@
     <meta name="author" content="Flavien Macquignon">
     <title>Flavien Macquignon > Développeur Junior</title>
     <style type="text/css">
-        /* TODO build CSS*/
         @import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
@@ -52,6 +51,15 @@
 
             .training-list::marker {
                 color: lightgrey;
+            }
+
+            .list_item {
+                font-weight: 900;
+                padding-top: 7px;
+            }
+
+            .list_description {
+                font-weight: 400;
             }
 
             .work-list::marker {
@@ -97,6 +105,7 @@
                 grid-template-columns: auto auto auto auto;
                 width: 100%;
             }
+
             dl {
                 margin-top: 2px;
             }
@@ -127,7 +136,7 @@
 
             div,
             .top_header {
-                font: 15px "Castoro", serif;
+                font: 11px "Castoro", serif;
                 display: inline-block;
             }
 
@@ -135,12 +144,12 @@
             .contact_vcard {
                 position: static;
                 margin: 5px;
-                padding: 8px;
+                padding: 7px;
             }
 
             h1,
             .top_title {
-                font: 45px;
+                font: 30px;
             }
 
             #noscript,
@@ -151,10 +160,20 @@
             .document {
                 display: flex;
             }
+
             dl {
                 margin-top: 2px;
             }
 
+
+            .list_item {
+                font-weight: 900;
+                /*padding-top: 7px*/;
+            }
+
+            .list_description {
+                font-weight: 400;
+            }
 
             .Skills-list-table {
                 display: grid;
@@ -185,7 +204,7 @@
 
             .rightColumn {
                 flex: 60%;
-                padding-left: 18px;
+                padding-left: 8px;
                 margin-left: 5px;
                 box-sizing: content-box;
                 display: block;
@@ -201,7 +220,7 @@
 
             .title {
                 text-align-last: justify;
-                font: 20px "Castoro", serif;
+                font: 18px "Castoro", serif;
             }
 
             .Skills-list-table {
@@ -248,7 +267,7 @@
         ####################################################################################
                                         Contact Information
         ####################################################################################
-            -->
+    -->
             <div id="vCard" class="contact_vcard">
                 <div class="name_class">
                     <span class="name" id="FN">Flavien Macquignon</span>
@@ -361,20 +380,20 @@
                 <ul class="training-list">
                     <li class="training-list list_item">Brevet de Technicien Supérieur Services Informatiques aux
                         Organisations
-                        <dl>
+                        <dl class="training-list list_description">
                             <dt>Option B: Solutions et Applications Métiers</dt>
                             <dt>Obtenu en Juin 2021 au Centre Nationnal d'Education à Distance</dt>
                         </dl>
                     </li>
                     <li class="training-list list_item">Licence d'Histoire
-                        <dl>
+                        <dl class="training-list list_description">
                             <dt>Obtenue en 2017 à l'Université Blaise Pascal (Ancienne Université Clermont d'Auvergne)
                             </dt>
                         </dl>
                     </li>
 
                     <li class="training-list list_item">Baccalauréat littéraire
-                        <dl>
+                        <dl class="training-list list_description">
                             <dt>Obtenu en 2013 au Lycée du Forez (Loire)</dt>
                         </dl>
                     </li>
@@ -388,34 +407,70 @@
             <div class="workExperiences">
                 <h2>Expériences</h2>
                 <ul class="work-list">
-                    <li class="work-list list_item"> Stage de 8 semaines au sein de l'entreprise
-                        <a href="https://bellybutton-group.com/">BellyButtonGroup</a>
-                        <dl>
+                    <li class="work-list list_item"> Développeur Back-End
+                        <dl class="work-list list_description">
                             <dt>Novembre 2020 - Janvier 2021</dt>
+                            <dt>Stage de 8 semaines au sein de l'entreprise
+                                <a href="https://bellybutton-group.com/">BellyButtonGroup</a>
+                            </dt>
                             <dt>Société spécialisée en marketing d'influence</dt>
                             <dt>Réalisation pour cette entreprise d'un dashboard de gestion des Influenceurs
                                 partenaires
                             </dt>
                             <dt>Etude de projet et redaction d'un cahier des charges</dt>
-                            <dt>Réalisation d'un MVP au sein de la structure existante</dt>
+                            <dt>Réalisation d'un prototype de dashboard au sein de la structure existante</dt>
                             <dt>Développement réalisé en PHP avec le framework Symfony</dt>
                         </dl>
                     </li>
                     <li class="work-list list_item">Equipier polyvalent
-                        <dl>
+                        <dl class="work-list list_description">
                             <dt>Février 2017 - Juillet 2018</dt>
-                            <dt>Préparation en cuisine service du soir</dt>
+                            <dt>Préparation en cuisine, service du soir</dt>
                         </dl>
                     </li>
                     <li class="work-list list_item">Chargé d'Accueil
-                        <dl>
+                        <dl class="work-list list_description">
                             <dt>Septembre 2016 - Juin 2017</dt>
                             <dt>Accueil du public en soirée à la bibliothèque universitaire</dt>
                         </dl>
                     </li>
                 </ul>
             </div>
-            
+            <!-- 
+        ####################################################################################
+                                        Personnals Projects & Evaluated Projects
+        ####################################################################################
+    -->
+            <div class="personnalsProject">
+                <h2>Projets Personnels</h2>
+                <ul class="project-list">
+                    <li class="project-list list_item">Application de gestion de frais en PHP</li>
+                    <dl class="project-list list_description">
+                        <dt>Réalisé dans le cadre de mon enseignement en BTS</dt>
+                        <dt>Développement d'une webapp de gestion des frais engagés afin qu'ils puissent être
+                            vérifié</dt>
+                        <dt>Développement avec les technologies web (HTML/CSS) ainsi que des technologies serveur
+                            (PHP/SQL)</dt>
+                        <dt>Développement répondant aux exigences du cahier des charges ainsi que des normes du
+                            client</dt>
+                    </dl>
+                    <li class="project-list list_item">Application Android</li>
+                    <dl class="project-list list_description">
+                        <dt>Réalisé dans le cadre de mon enseignement en BTS</dt>
+                        <dt>Application réalisée afin de permettre le dépot des frais par les employés</dt>
+                        <dt>Développement réalisé en Java et permettant de se connecter à la base de donnée de
+                            l'application web</dt>
+                        <dt>Développement répondant aux exigences du cahier des charges ainsi que des normes du
+                            client</dt>
+                    </dl>
+                    <li class="project-list list_item">Développement d'une application de calendrier utilisant la norme
+                        CalDaV</li>
+                    <dl class="project-list list_description">
+                        <dt>Projet réalisé en autonomie</dt>
+                        <dt>Projet Open-Source de calendrier en lige de commande utilisant la norme CalDaV</dt>
+                    </dl>
+                </ul>
+            </div>
             <!-- 
         ####################################################################################
                                         Skills
