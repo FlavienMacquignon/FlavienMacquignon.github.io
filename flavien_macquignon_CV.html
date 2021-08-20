@@ -37,10 +37,23 @@
             }
 
             .about,
-            .contact_vcard {
+            .contact_vcard,
+            .hobby {
                 position: static;
                 margin: 5px;
                 padding: 10px;
+            }
+
+            .about {
+                font-size: 17px;
+            }
+
+            .about_me {
+                font-size: 15px;
+            }
+
+            .hobby-list::marker {
+                content: "";
             }
 
             .document {
@@ -60,6 +73,11 @@
 
             .list_description {
                 font-weight: 400;
+            }
+
+            .hobby-list-item {
+                font-weight: 400;
+                padding-left: 0px;
             }
 
             .work-list::marker {
@@ -86,13 +104,13 @@
             }
 
             .top_title {
-                font: 35px "Poppins", serif;
+                font: 20px "Poppins", serif;
                 font-weight: bold;
             }
 
             .title {
                 text-align-last: justify;
-                font: 20px "Castoro", serif;
+                font: 35px "Castoro", serif;
             }
 
 
@@ -168,7 +186,6 @@
 
             .list_item {
                 font-weight: 900;
-                /*padding-top: 7px*/;
             }
 
             .list_description {
@@ -260,8 +277,9 @@
         <div class="leftColumn">
             <br>
             <div class="top_header">
-                <h1 class="top_title">Flavien Macquignon</h1>
                 <span class="title">Développeur Junior</span>
+                <h1 class="top_title" id="FN">Flavien Macquignon</h1>
+
             </div>
             <!-- 
         ####################################################################################
@@ -269,10 +287,7 @@
         ####################################################################################
     -->
             <div id="vCard" class="contact_vcard">
-                <div class="name_class">
-                    <span class="name" id="FN">Flavien Macquignon</span>
-                </div>
-                <br>
+                <!-- TODO Add a picture here-->
                 <div class="age_class">
                     <span class="age">
                         <script>
@@ -312,6 +327,8 @@
                         <span id="age"></span> ans (1995)
                     </span>
                 </div>
+                <br>
+                <div><span>Permis B</span></div>
                 <div class="adress_class"> <span class="adress" id="ADR">39, Avenue de la Liberation,
                         63000 Clermont-Ferrand, France</span>
                 </div>
@@ -321,6 +338,8 @@
                     <span class="separator">--</span>
                     <span class="corded"> <a href="tel:+33443114208" id="HOME">04 43 11 42 08<a></span>
                 </div>
+                <br>
+                <!-- TODO hide links on print ==> Put an hidden tag on this and unhidde some on print-->
                 <div class="email_class"><span class="email"> <a id="EMAIL"
                             href="mailto:flavien-macquignon@fastmail.fr">flavien_macquignon@fastmail.fr</a> </span>
                 </div>
@@ -356,18 +375,29 @@
             <div class="about">
                 <h4>A propos de moi</h4>
                 <p class="about_me">
-                    Je suis agé de<noscript>26</noscript>
-                    <span id="age2"></span> ans et j'effectue actuellement une reconversion professionnelle afin de
+                    Je suis âgé de<noscript>26</noscript>
+                    <span id="age2"></span> ans et j'ai terminé ma reconversion professionnelle afin de
                     travailler
                     en tant que développeur. <br>
-                    Issu d'une filière littéraire, je suis passionné d'informatique. Je suis ouvert et curieux. Je
+                    Issu d'une filière littéraire, j'ai toujours été passionné d'informatique. Je suis ouvert, curieux,
+                    et je
                     travaille aussi bien seul qu'en équipe. Sérieux et motivé, j'aimerais mettre ma rigueur au
                     service
                     de ce métier.
                 </p>
-
             </div>
-
+            <div class="hobby">
+                <!-- TODO Font weight ?-->
+                <h4>Centres d'intérêts</h4>
+                <ul clas="hobby-list">
+                    <!-- TODO Modify font weight -->
+                    <li class="hobby-list list_item hobby-list-item">⚔ Littérature de Science-Fiction et Fantaisie </li>
+                    <li class="hobby-list list_item hobby-list-item">🧑‍💻 Culture Open-Source </li>
+                    <li class="hobby-list list_item hobby-list-item">🎬 Cinéma </li>
+                    <li class="hobby-list list_item hobby-list-item">🎮 Modding de consoles de jeux </li>
+                    <li class="hobby-list list_item hobby-list-item">🔪 Cuisine </li>
+                </ul>
+            </div>
         </div>
         <!-- 
         ####################################################################################
@@ -376,25 +406,32 @@
     -->
         <div class="rightColumn">
             <div class="training">
-                <h2>Formation</h2>
+                <h2>Formations</h2>
                 <ul class="training-list">
                     <li class="training-list list_item">Brevet de Technicien Supérieur Services Informatiques aux
                         Organisations
                         <dl class="training-list list_description">
-                            <dt>Option B: Solutions et Applications Métiers</dt>
-                            <dt>Obtenu en Juin 2021 au Centre Nationnal d'Education à Distance</dt>
+                            <dt>Option B: Solutions Logicielles et Applications Métiers</dt>
+                            <dt>Septembre 2019 - Juin 2021 au Centre Nationnal d'Education à Distance</dt>
+                        </dl>
+                    </li>
+                    <li class="training-list list_item">Master Enseignement
+                        <dl class="training-list list_description">
+                            <dt>Septembre 2018 - Juin 2019</dt>
+                            <dt>Première année suivie à l'Université Clermont Auvergne</dt>
                         </dl>
                     </li>
                     <li class="training-list list_item">Licence d'Histoire
                         <dl class="training-list list_description">
-                            <dt>Obtenue en 2017 à l'Université Blaise Pascal (Ancienne Université Clermont d'Auvergne)
+                            <dt>Septembre 2013 - Juin 2017 à l'Université Blaise Pascal (Aujourd'hui Université Clermont
+                                Auvergne)
                             </dt>
                         </dl>
                     </li>
 
                     <li class="training-list list_item">Baccalauréat littéraire
                         <dl class="training-list list_description">
-                            <dt>Obtenu en 2013 au Lycée du Forez (Loire)</dt>
+                            <dt>Obtenu en Juin 2013 au Lycée du Forez (Loire)</dt>
                         </dl>
                     </li>
                 </ul>
@@ -418,10 +455,42 @@
                                 partenaires
                             </dt>
                             <dt>Etude de projet et redaction d'un cahier des charges</dt>
-                            <dt>Réalisation d'un prototype de dashboard au sein de la structure existante</dt>
+                            <dt>Réalisation d'un prototype au sein de la structure existante</dt>
                             <dt>Développement réalisé en PHP avec le framework Symfony</dt>
                         </dl>
                     </li>
+                </ul>
+
+                <!-- TODO Made an intend here ?-->
+                <ul class="project-list">
+                    <li class="project-list list_item">Application de gestion de frais en PHP</li>
+                    <dl class="project-list list_description">
+                        <dt>Réalisé dans le cadre de mon enseignement en BTS</dt>
+                        <dt>Développement d'une webapp de gestion des frais engagés afin qu'ils puissent être
+                            vérifiés</dt>
+                        <dt>Développement avec des technologies web (HTML/CSS) et serveur
+                            (PHP/PostgreSQL)</dt>
+                        <dt>Développement répondant aux exigences du cahier des charges ainsi qu'aux normes du
+                            client</dt>
+                    </dl>
+                    <li class="project-list list_item">Application Android</li>
+                    <dl class="project-list list_description">
+                        <dt>Réalisé dans le cadre de mon enseignement en BTS</dt>
+                        <dt>Application destinée au dépôt des frais par les employés lors de leurs déplacements</dt>
+                        <dt>Développement réalisé en Java et permettant de se connecter à la base de données de
+                            l'application web</dt>
+                        <dt>Développement répondant aux exigences du cahier des charges ainsi qu'aux normes du
+                            client</dt>
+                    </dl>
+                    <li class="project-list list_item">Développement d'une application de calendrier utilisant la norme
+                        CalDaV</li>
+                    <dl class="project-list list_description">
+                        <dt>Projet réalisé en autonomie</dt>
+                        <dt>Projet Open-Source de calendrier, fonctionnant en ligne de commande et utilisant la norme
+                            CalDaV</dt>
+                    </dl>
+                </ul>
+                <ul class="work-list">
                     <li class="work-list list_item">Equipier polyvalent
                         <dl class="work-list list_description">
                             <dt>Février 2017 - Juillet 2018</dt>
@@ -436,48 +505,14 @@
                     </li>
                 </ul>
             </div>
-            <!-- 
-        ####################################################################################
-                                        Personnals Projects & Evaluated Projects
-        ####################################################################################
-    -->
-            <div class="personnalsProject">
-                <h2>Projets Personnels</h2>
-                <ul class="project-list">
-                    <li class="project-list list_item">Application de gestion de frais en PHP</li>
-                    <dl class="project-list list_description">
-                        <dt>Réalisé dans le cadre de mon enseignement en BTS</dt>
-                        <dt>Développement d'une webapp de gestion des frais engagés afin qu'ils puissent être
-                            vérifié</dt>
-                        <dt>Développement avec les technologies web (HTML/CSS) ainsi que des technologies serveur
-                            (PHP/SQL)</dt>
-                        <dt>Développement répondant aux exigences du cahier des charges ainsi que des normes du
-                            client</dt>
-                    </dl>
-                    <li class="project-list list_item">Application Android</li>
-                    <dl class="project-list list_description">
-                        <dt>Réalisé dans le cadre de mon enseignement en BTS</dt>
-                        <dt>Application réalisée afin de permettre le dépot des frais par les employés</dt>
-                        <dt>Développement réalisé en Java et permettant de se connecter à la base de donnée de
-                            l'application web</dt>
-                        <dt>Développement répondant aux exigences du cahier des charges ainsi que des normes du
-                            client</dt>
-                    </dl>
-                    <li class="project-list list_item">Développement d'une application de calendrier utilisant la norme
-                        CalDaV</li>
-                    <dl class="project-list list_description">
-                        <dt>Projet réalisé en autonomie</dt>
-                        <dt>Projet Open-Source de calendrier en lige de commande utilisant la norme CalDaV</dt>
-                    </dl>
-                </ul>
-            </div>
-            <!-- 
-        ####################################################################################
-                                        Skills
-        ####################################################################################
-    -->
+            <!--
+            ####################################################################################
+            Skills
+            ####################################################################################
+            -->
+            <!-- TODO check the font weight on the list_item-->
             <div class="Skills">
-                <h2>Compétences:</h2>
+                <h2>Compétences</h2>
                 <div class="Skills-list-table">
                     <div class="leftColumn_Skills-list">
                         <ul class="Skills-list">
@@ -511,15 +546,15 @@
                                 <meter id="Java" value=5 min=0 max=10>6 out of 10</meter>
 
                             </li>
-
-                        </ul>
-                    </div>
-                    <div class="rightColumn_Skills-list">
-                        <ul class="Skills-list">
                             <li class="Skills-list list_item">
                                 <label for="C++">C++: </label>
                                 <meter id="C++" value=3 min=0 max=10>3 out of 10</meter>
                             </li>
+                        </ul>
+                    </div>
+                    <div class="rightColumn_Skills-list">
+                        <ul class="Skills-list">
+
                             <li class="Skills-list list_item">
                                 <label for="Git">Git: </label>
                                 <meter id="Git" value=7 min=0 max=10>7 out of 10</meter>
@@ -528,18 +563,13 @@
                                 <label for="Linux">Linux: </label>
                                 <meter id="Linux" value=6 min=0 max=10>6 out of 10</meter>
                             </li>
-
-                        </ul>
-                    </div>
-                    <div class="Languages">
-                        <ul class="Languages-list">
+                            <li class="Skills-list list_item">
+                                <label for="Bureautique">Bureautique:</label>
+                                <meter id="Bureautique" value="7" min="0" max="10">7 out of 10</meter>
+                            </li>
                             <li class="Languages-list list_item">
                                 <label for="English">Anglais: </label>
                                 <meter id="English" value=8 min=0 max=10>8 out of 10</meter>
-                            </li>
-                            <li class="Languages-list list_item">
-                                <label class="French">Français: </label>
-                                <meter id="French" value=10 min=0 maix=10>10 out of 10 (Native)</meter>
                             </li>
                         </ul>
                     </div>
