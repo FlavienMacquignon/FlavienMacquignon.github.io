@@ -3,20 +3,18 @@
 
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <meta name="description" content="CV de Flavien Macquignon">
     <meta name="author" content="Flavien Macquignon">
-    <title>Flavien Macquignon > Développeur Junior</title>
+    <link rel="icon" href="./media/happy_face.jpg" type="image/x-icon" />
+    <title>Flavien Macquignon > Développeur FullStack</title>
     <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
-        /* TODO Check device width */
+        body {
+            width: 21cm;
+            height: 29.7cm;
+        }
         @media screen {
 
-            body {
-                width: 1280px;
-            }
 
             .document {
                 display: flex;
@@ -34,35 +32,37 @@
 
             div,
             .top_header {
-
-                font: 15px "Castoro", serif;
+                font: 15px serif;
                 display: inline-block;
-
             }
 
             .top_header {
                 border-style: ridge;
-                padding: 10px;
-                margin: 15px;
+                padding: 5px;
+                margin: 5px;
                 border-width: thick;
                 border-color: #6B9D9D;
             }
 
             .title {
                 text-align-last: justify;
-                font: 35px "Castoro", serif;
+                font: 35px serif;
             }
 
             .top_title {
-                font: 20px "Poppins", serif;
+                font: 20px serif;
                 font-weight: bold;
             }
 
+            .face{
+                text-align: center;
+            }
+
             .happy_face {
-                max-width: 50%;
-                height: auto;
+                max-width: 200px;
+                max-height: 200px;
                 padding: 10px;
-                margin-left: 15px;
+                margin-left: auto;
             }
 
             dl {
@@ -73,8 +73,8 @@
             .contact_vcard,
             .hobby {
                 position: static;
-                margin: 5px;
-                padding: 10px;
+                margin: 0px;
+                padding: 5px;
             }
 
             .about {
@@ -85,6 +85,9 @@
                 font-size: 15px;
             }
 
+            .hobby-list{
+                padding-inline-start: 0px;
+            }
             .hobby-list::marker {
                 content: "";
             }
@@ -111,6 +114,7 @@
                 border-left: black;
                 border-width: 2px;
                 border-left-style: solid;
+                padding-top: 25px;
             }
 
             .training-list::marker {
@@ -120,6 +124,7 @@
             .list_item {
                 font-weight: 900;
                 padding-top: 7px;
+                padding-inline-start: 0px;
             }
 
             .work-element,
@@ -156,7 +161,6 @@
         }
 
         @media print {
-
             .document {
                 display: flex;
                 text-align: initial;
@@ -172,23 +176,23 @@
 
             div,
             .top_header {
-                font: 12px "Castoro", serif;
+                font: 12px serif;
                 display: inline-block;
             }
 
             .title {
                 text-align-last: justify;
-                font: 28px "Castoro", serif;
+                font: 28px serif;
             }
 
             .top_title {
-                font: 20px "Poppins", serif;
+                font: 20px serif;
                 font-weight: bold;
             }
 
             .happy_face {
-                max-width: 50%;
-                height: auto;
+                max-width: 200px;
+                height: 200px;
                 padding: 10px;
                 margin-left: 15px;
             }
@@ -286,7 +290,7 @@
     <div class="leftColumn">
         <br>
         <div class="top_header">
-            <span class="title">Développeur Junior</span>
+            <span class="title">Développeur FullStack</span>
             <h1 class="top_title" id="FN">Flavien Macquignon</h1>
 
         </div>
@@ -338,19 +342,23 @@
             <br>
             <div><span>Permis B</span></div>
             <br>
-            <div class="address_class"><span class="address" id="ADR">13, Rue des Gravières 63116 Beauregard-L'Evêque France</span>
+            <div class="address_class"><span class="address" id="ADR">13, Rue des Gravières <br> 63116 Beauregard-L'Evêque France</span>
             </div>
-
+            <br>
             <div class="phone_class"><span class="mobile"><a href="tel:+3388005340" id="CELL">06 88 00 53 40</a></span>
             </div>
             <br>
             <div class="email_class"><span class="email"> <a id="EMAIL"
-                                                             href="mailto:flavien-macquignon@fastmail.fr">flavien_macquignon@fastmail.fr</a> </span>
+                                                             href="mailto:flavien-macquignon@fastmail.fr">flavien_macquignon@fastmail.fr</a></span>
             </div>
-            <div class="url_class"> <span class="url"><a href="https://flavienmacquignon.github.io"
-                                                         id="WEB">https://flavienmacquignon.github.io</a></span>
-                <br/><span class="url"> <a href="https://github.com/FlavienMacquignon"
-                                           id="REPO">https://github.com/FlavienMacquignon</a></span>
+            <br>
+            <div class="url_class">
+                <span class="url"><a href="https://flavienmacquignon.github.io"
+                                     id="WEB">https://flavienmacquignon.github.io</a></span>
+
+                /
+                <span class="url"> <a href="https://github.com/FlavienMacquignon"
+                                      id="REPO">https://github.com/FlavienMacquignon</a></span>
             </div>
             <script type="application/javascript">
                 function createVCF() {
@@ -380,13 +388,13 @@
         </div>
         <div class="about">
             <h4>A propos de moi</h4>
-            <p class="about_me">
-
-            </p>
+            <p class="about_me">Développeur full stack passionné par l'innovation technologique. Amateur de
+                science-fiction et de jeux rétro, je combine créativité et rigueur dans mes projets, toujours à la
+                recherche de nouveaux défis.</p>
             <p>Anglais courant</p>
         </div>
         <div class="hobby">
-            <h4>Centres d'intérêts</h4>
+            <h3>Centres d'intérêts</h3>
             <ul class="hobby-list">
                 <li class="hobby-list list_item hobby-list-item">📚 Littérature de Science-Fiction et Fantaisie</li>
                 <li class="hobby-list list_item hobby-list-item">‍💻 Culture Open-Source</li>
@@ -397,27 +405,25 @@
         </div>
     </div>
     <div class="rightColumn">
-
         <!--
-    ####################################################################################
-                                    Work Experiences
-    ####################################################################################
--->
+            ####################################################################################
+                                            Work Experiences
+            ####################################################################################
+        -->
         <div class="workExperiences">
-            <h2>Expériences</h2>
+            <h2>Expériences Profesionnelles</h2>
             <ul class="work-list">
                 <li class="work-list list_item">
                         <span class="work-element">
                             <span>Développeur Full-Stack</span>
-                            <span>Clermont-Ferrand, Juin 2023 - Avril 2025 (22 mois)</span>
+                            <span>Clermont-Fd, 06/2023 - 05/2025</span>
                         </span>
                     <dl class="work-list list_description">
-                        <dt>
-                            <a href="https://linxenxs.com/fr">Linxens</a>, groupe proposant des solutions RFID
-                        </dt>
+                        <dt><a href="https://linxenxs.com/fr">Linxens</a>, groupe proposant des solutions RFID</dt>
                         <dt>Participation aux phases d'architecture des solutions</dt>
-                        <dt>Développement d'API en .NET</dt>
-                        <dt>Utilisation de Broker (MQTT)</dt>
+                        <dt>Développement d'API et Microservices en .NET</dt>
+                        <dt>Connection MQTT/AMQP (RabbitMQ)</dt>
+                        <dt>Conception base de données PostgreSQL</dt>
                     </dl>
                 </li>
             </ul>
@@ -425,15 +431,16 @@
                 <li class="work-list list_item">
                         <span class="work-element">
                             <span>Développeur Full-Stack</span>
-                            <span>Clermont-Ferrand, Février 2022 - Mai 2023 (13 mois)</span>
+                            <span>Clermont-Fd, 02/2022 - 05/2023</span>
                         </span>
                     <dl class="work-list list_description">
                         <dt>
                             <a href="https://yesitis.fr/">Yesitis</a>, société développant des objets connéctés
                         </dt>
                         <dt>Participation aux phases d'architecture des solutions</dt>
-                        <dt>Développement d'API en Java ou .NET</dt>
-                        <dt>Utilisation de Broker (MQTT)</dt>
+                        <dt>Développement d'API en .NET ou Java</dt>
+                        <dt>Connection MQTT/AMQP (RabbitMQ)</dt>
+                        <dt>Conception base de données PostgreSQL</dt>
                         <dt>Développement pour imprimantes Zebra</dt>
                     </dl>
                 </li>
@@ -441,17 +448,14 @@
             <ul class="work-list">
                 <li class="work-list list_item">
                         <span class="work-element">
-                            <span>Développeur Back-End</span>
-                            <span>Paris, 2020 - 2021 (2 mois)</span>
+                            <span>Développeur Back-End Stagiaire</span>
+                            <span>Paris, 12/2020 - 01/2021</span>
                         </span>
                     <dl class="work-list list_description">
-                        <dt>
-                            <a href="https://bellybutton-group.com/">BellyButtonGroup</a>, société spécialisée en
+                        <dt><a href="https://bellybutton-group.com/">BellyButtonGroup</a>, société spécialisée en
                             marketing d'influence
                         </dt>
-                        <dt>Réalisation d'un dashboard de gestion des Influenceurs
-                            partenaires
-                        </dt>
+                        <dt>Réalisation d'un dashboard de gestion des Influenceurs partenaires</dt>
                         <dt>Etude de projet, redaction d'un cahier des charge et prototypage au sein de la structure
                             existante
                         </dt>
@@ -459,47 +463,26 @@
                     </dl>
                 </li>
             </ul>
-            <ul class="project-list">
-                <li class="project-list list_item"><span class="work-element"><span>Développeur
-                                Back-End</span><span>Clermont-Ferrand, 2020 - 2021</span></span></li>
-                <dl class="project-list list_description">
-                    <dt>Développement d'une webapp de gestion des frais profesionnels</dt>
-
-                    <dt>Développement répondant aux exigences du cahier des charges ainsi qu'aux normes du
-                        client
-                    </dt>
-                </dl>
-                <li class="project-list list_item"><span class="work-element"><span>Développeur
-                                Mobile</span><span>Clermont-Ferrand, 2020 - 2021</span> </span>
-                </li>
-                <dl class="project-list list_description">
-                    <dt>Développement réalisé en Java et permettant de se connecter à une base de donné distante</dt>
-                    <dt>Développement répondant aux exigences du cahier des charges ainsi qu'aux normes du
-                        client
-                    </dt>
-                </dl>
-            </ul>
         </div>
 
         <!--
-    ####################################################################################
-                                    Training
-    ####################################################################################
--->
+            ####################################################################################
+                                            Training
+            ####################################################################################
+        -->
         <div class="training">
             <h2>Formations</h2>
             <ul class="training-list">
                 <li class="training-list list_item">
                         <span class="training-element">
                             <span>BTS - Service Informatique aux Organisations</span>
-                            <span>Clermont-Ferrand, 2021</span>
+                            <span>Clermont-Ferrand, 2019-2021</span>
                         </span>
                     <dl class="training-list list_description">
                         <dt>Option B: Solutions Logicielles et Applications Métiers</dt>
                         <dt>Centre National d'Education à Distance</dt>
                     </dl>
-                <li class="training-list list_item"><span class="training-element"><span>Licence
-                                d'Histoire</span><span>Clermont-Ferrand, 2017</span></span>
+                <li class="training-list list_item"><span class="training-element"><span>Licence d'Histoire</span><span>Clermont-Ferrand, 2013-2017</span></span>
                     <dl class="training-list list_description">
                         <dt>Université Clermont
                             Auvergne
@@ -507,8 +490,8 @@
                     </dl>
                 </li>
 
-                <li class="training-list list_item"><span class="training-element"><span>Baccalauréat
-                                littéraire</span><span>Feurs, 2013</span></span>
+                <li class="training-list list_item"><span
+                        class="training-element"><span>Baccalauréat littéraire</span><span>Feurs, 2013</span></span>
                     <dl class="training-list list_description">
                         <dt>Lycée du Forez (Loire)</dt>
                     </dl>
@@ -529,7 +512,7 @@
                             Développement Web</h4>
                         <li class="Skills-list Skills_item">
                             <label for="HTML/CSS">HTML/CSS: </label>
-                            <meter id="HTML/CSS" value=7 min=0 max=10>7 out of 10</meter>
+                            <meter id="HTML/CSS" max="10" min="0" value="7">7 out of 10</meter>
                         </li>
                         <li class="Skills-list Skills_item">
                             <label for="JS">Javascript:</label>
@@ -542,13 +525,13 @@
                     <ul class="Skills-list">
                         <h4 class="Skills-Title">Développement Logiciel</h4>
                         <li class="Skills-list Skills_item">
-                            <label for="Java">Java: </label>
-                            <meter id="Java" value=5 min=0 max=10>6 out of 10</meter>
-
+                            <label for="C_Sharp">C#: </label>
+                            <meter id="C_Sharp" max=10 min=0 placeholder="7 out of 10" value=7>7 out of 10</meter>
                         </li>
                         <li class="Skills-list Skills_item">
-                            <label for="C_Sharp">C#: </label>
-                            <meter id="C_Sharp" value=7 min=0 max=10 placeholder="7 out of 10">7 out of 10</meter>
+                            <label for="Java">Java: </label>
+                            <meter id="Java" max=10 min=0 value=4>4 out of 10</meter>
+
                         </li>
                         <li class="Skills-list Skills_item">
                             <label for="C++">C++: </label>
