@@ -2,40 +2,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="CV de Flavien Macquignon">
-    <meta name="author" content="Flavien Macquignon">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+    <meta name="description" content="CV de Flavien Macquignon"/>
+    <meta name="author" content="Flavien Macquignon"/>
     <link rel="icon" href="./media/happy_face.jpg" type="image/x-icon" />
-    <title>Flavien Macquignon > Développeur FullStack</title>
+    <title>Flavien Macquignon > Développeur Back-End</title>
     <style type="text/css">
+        :root {
+            --default-font-size: clamp(0.5rem, 1.5vmin, 1.5rem);
+        }
         body {
-            width: 21cm;
-            height: 29.7cm;
+            height: 100vh;
+            margin: 0;
+            overflow-y: hidden;
         }
         @media screen {
-
-
             .document {
                 display: flex;
-                padding: 5px;
                 text-align: initial;
+                gap: 0.01vmin;
+                padding-top: 0.2vh;
+                padding-bottom: 0.2vh;
+                overflow-wrap: break-word;
+                word-break: break-word;
+                height: 100vh;
+            }
+            .leftColumn,
+            .rightColumn {
+                min-width: 0;
+                box-sizing: border-box;
+                height: 100%;
             }
 
             .leftColumn {
-                flex: 40%;
-                float: left;
+                flex: 0 1 30%;
+                box-sizing: border-box;
                 border-right: black;
                 border-width: 2px;
                 border-right-style: solid;
             }
-
             div,
             .top_header {
-                font: 15px serif;
+                font: var(--default-font-size) serif;
                 display: inline-block;
             }
-
             .top_header {
                 border-style: ridge;
                 padding: 5px;
@@ -43,60 +54,49 @@
                 border-width: thick;
                 border-color: #6B9D9D;
             }
-
             .title {
                 text-align-last: justify;
-                font: 35px serif;
+                font: calc(var(--default-font-size) *2) serif;
             }
-
             .top_title {
-                font: 20px serif;
+                font: calc(var(--default-font-size) * 2%) serif;
                 font-weight: bold;
             }
-
             .face{
                 text-align: center;
             }
-
             .happy_face {
-                max-width: 200px;
-                max-height: 200px;
+                max-width: 25vw;
+                max-height:25vh;
                 padding: 10px;
                 margin-left: auto;
             }
-
             dl {
                 margin-top: 2px;
             }
-
             .about,
             .contact_vcard,
             .hobby {
                 position: static;
-                margin: 0px;
+                margin: 0;
                 padding: 5px;
             }
-
             .about {
-                font-size: 17px;
+                font-size: var(--default-font-size);
             }
-
             .about_me {
-                font-size: 15px;
+                font-size: var(--default-font-size);
             }
-
             .hobby-list{
-                padding-inline-start: 0px;
+                padding-inline-start: 0;
             }
             .hobby-list::marker {
                 content: "";
             }
-
             .hobby-list-item {
                 font-weight: 400 !important;
                 padding-left: 0;
             }
-
             .face,
             .hobby,
             .workExperiences,
@@ -104,17 +104,21 @@
             .Skills {
                 width: 100%;
             }
+            .button_vcf{
+                display:none;
+                width: clamp(10vw, 15vmin, 37.5vw);
+                height: clamp(5vh, 1.5vmin, 1.5rem);
+                font-size: var(--default-font-size);
+            }
 
             .rightColumn {
-                flex: 60%;
-                padding-left: 25px;
-                margin-left: 5px;
-                box-sizing: content-box;
+                flex: 0 1 70%;
+                box-sizing: border-box;
+                margin-left: 0.5vw;
                 display: block;
                 border-left: black;
                 border-width: 2px;
                 border-left-style: solid;
-                padding-top: 25px;
             }
 
             .training-list::marker {
@@ -124,12 +128,10 @@
             .list_item {
                 font-weight: 900;
                 padding-top: 7px;
-                padding-inline-start: 0px;
             }
 
             .work-element,
             .training-element {
-                display: flex;
                 justify-content: space-between;
             }
 
@@ -156,11 +158,12 @@
                 margin: 0;
                 text-decoration: underline;
             }
-
-
         }
-
         @media print {
+            body {
+                width: 21cm;
+                height: 29.7cm;
+            }
             .document {
                 display: flex;
                 text-align: initial;
@@ -290,7 +293,7 @@
     <div class="leftColumn">
         <br>
         <div class="top_header">
-            <span class="title">Développeur FullStack</span>
+            <span class="title">Développeur Back-End</span>
             <h1 class="top_title" id="FN">Flavien Macquignon</h1>
 
         </div>
@@ -362,7 +365,7 @@
             </div>
             <script type="application/javascript">
                 function createVCF() {
-                    let vCard = new Blob(["BEGIN: VCARD\nVERSION: 3.0\nFN:" + document.getElementById("FN").innerHTML.toString() + "\nN: Macquignon;Flavien;;;\nNICKNAME:\nORG:;\nTITLE:;\nBDAY:1995-07-02\nEMAIL;TYPE=WORK;TYPE=pref:" + document.getElementById("EMAIL").innerHTML.toString() + "\nTEL;TYPE=cell:" + document.getElementById("CELL").innerHTML.toString() + "\nTEL; TYPE=home:" + document.getElementById("HOME").innerHTML.toString() + "\nADR;TYPE=home:;;" + document.getElementById("ADR").innerHTML.toString() + "\nURL:" + document.getElementById("WEB").innerHTML.toString() + "\nEMAIL; PREF; INTERNET:" + document.getElementById("EMAIL").innerHTML.toString() + "\nREV: 20210223T102651Z\nX-SOCIAL-PROFILE;X-USER=\"" + document.getElementById("REPO").innerHTML.toString() + "\";TYPE=github:END: VCARD\n"], {type: 'text/vcard'});
+                    let vCard = new Blob(["BEGIN: VCARD\nVERSION: 3.0\nFN:" + document.getElementById("FN").innerHTML.toString() + "\nN: Macquignon;Flavien;;;\nNICKNAME:\nORG:;\nTITLE:;\nBDAY:1995-07-02\nEMAIL;TYPE=WORK;TYPE=pref:" + document.getElementById("EMAIL").innerHTML.toString() + "\nTEL;TYPE=cell:" + document.getElementById("CELL").innerHTML.toString() + "\nADR;TYPE=home:;;" + document.getElementById("ADR").innerHTML.toString() + "\nURL:" + document.getElementById("WEB").innerHTML.toString() + "\nEMAIL; PREF; INTERNET:" + document.getElementById("EMAIL").innerHTML.toString() + "\nREV: 20210223T102651Z\nX-SOCIAL-PROFILE;X-USER=\"" + document.getElementById("REPO").innerHTML.toString() + "\";TYPE=github:END: VCARD\n"], {type: 'text/vcard'});
                     let url = window.URL.createObjectURL(vCard);
                     let anchor = document.createElement("a");
                     anchor.href = url;
@@ -373,9 +376,9 @@
                 }
             </script>
 
-            <button id="noscript" onclick="createVCF()" style="display:none">Télécharger ma carte de visite</button>
+            <button id="noscript" onclick="createVCF()" class="button_vcf">Télécharger ma carte de visite</button>
             <noscript id="link_vcf">
-                <button><a href="Flavien Macquignon.vcf">Télécharger ma carte de visite</a></button>
+                <button><a href="Flavien_Macquignon.vcf">Télécharger ma carte de visite</a></button>
             </noscript>
             <script type="application/javascript">
                 function init() {
