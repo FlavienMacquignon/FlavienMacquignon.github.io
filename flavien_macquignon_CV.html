@@ -12,27 +12,13 @@
         :root {
             --default-font-size: clamp(0.5rem, 1.5vmin, 1.5rem);
         }
-        @media screen and (hover: none) and (orientation: landscape){
-            body{
-                display: grid;
-                place-items: center;
-            }
-            .document {
-                display: none;
-            }
-            .rotate-warning {
-                font-size:clamp(0.5rem, 1rem, 1.5rem);
-            }
-        }
-
-        @media screen and (hover: hover){
+        @media screen {
             body {
                 height: 100vh;
                 margin: 0;
             }
-            .rotate-warning {
-                display: none;
-            }
+        }
+        @media screen{
             .document {
                 display: flex;
                 text-align: initial;
@@ -317,9 +303,6 @@
 </head>
 
 <body>
-<div class="rotate-warning">
-    Ce Cv est prévu pour être lu/imprimé au format  portrait.
-</div>
 <div class="document">
     <div class="leftColumn">
         <br>
